@@ -1,21 +1,21 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <img src="./assets/logo.png" alt="" />
+    <School></School>
+    <Student></Student>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//引入组件
+import School from "./components/School.vue";
+import Student from "./components/Student.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    School,
+    Student,
+  },
+};
 </script>
-
-<style>
-
-</style>
