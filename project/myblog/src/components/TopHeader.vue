@@ -3,7 +3,7 @@
     <div class="logo">Silence37</div>
     <ul class="navigation">
       <li><router-link :to="{ name: 'home' }" active-class="active">Home</router-link></li>
-      <li><router-link :to="{ name: 'articles' }" active-class="active">Articles</router-link></li>
+      <li><router-link replace :to="{ name: 'articles' }" active-class="active">Articles</router-link></li>
     </ul>
   </div>
 </template>

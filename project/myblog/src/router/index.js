@@ -19,9 +19,7 @@ const routes = [
         path: 'detail/:id',
         component: Detail,
         name: 'detail',
-        props({ params }) {
-          return { id: params.id }
-        }
+        props: true
       }
     ]
   }
