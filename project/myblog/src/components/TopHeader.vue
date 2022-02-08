@@ -1,10 +1,12 @@
 <template>
   <div class="header">
-    <div class="logo">Silence37</div>
-    <ul class="navigation">
-      <li><router-link :to="{ name: 'home' }" active-class="active">Home</router-link></li>
-      <li><router-link replace :to="{ name: 'articles' }" active-class="active">Articles</router-link></li>
-    </ul>
+    <div class="header_content w1200">
+      <div class="logo">Silence37</div>
+      <ul class="navigation">
+        <li><router-link :to="{ name: 'home' }" active-class="active">Home</router-link></li>
+        <li><router-link replace :to="{ name: 'articles' }" active-class="active">Articles</router-link></li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -15,7 +17,7 @@ export default {
 </script>
 
 <style>
-.header {
+.header_content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,8 +27,7 @@ export default {
   background: #ffffff;
   color: lightslategray;
   font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 20px;
+  padding: 10px 0;
   font-size: 24px;
 }
 .navigation {

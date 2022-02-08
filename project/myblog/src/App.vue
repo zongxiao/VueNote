@@ -1,9 +1,7 @@
 <template>
   <div id="app">
-    <div class="container">
-      <TopHeader />
-      <router-view />
-    </div>
+    <TopHeader />
+    <router-view />
   </div>
 </template>
 
@@ -18,7 +16,7 @@ export default {
 </script>
 
 <style>
-  .container {
+  .w1200 {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;

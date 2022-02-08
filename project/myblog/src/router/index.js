@@ -6,7 +6,7 @@ import Articles from '../pages/Articles.vue'
 import Detail from '../pages/Detail.vue'
 const routes = [
   {
-    path: '/home',
+    path: '/',
     component: Home,
     name: 'home'
   },

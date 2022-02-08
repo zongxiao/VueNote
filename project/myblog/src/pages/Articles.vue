@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w1200">
     <ul>
       <li v-for="item in articleList" :key="item.id">
         <router-link :to="{ name: 'detail', params: { id: item.id } }">
