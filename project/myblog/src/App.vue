@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <TopHeader />
+    <AllHeader />
     <router-view />
+    <AllFooter />
   </div>
 </template>
 
 <script>
-import TopHeader from './components/TopHeader.vue'
+import AllHeader from './components/AllHeader.vue'
+import AllFooter from './components/AllFooter.vue'
 export default {
   name: 'App',
   components: {
-    TopHeader
+    AllHeader,
+    AllFooter
   }
 }
 </script>
