@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import('./assets/css/common.styl')
 import AllHeader from './components/AllHeader.vue'
 import AllFooter from './components/AllFooter.vue'
 export default {

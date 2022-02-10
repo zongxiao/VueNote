@@ -1,0 +1,56 @@
+.index_projects
+  margin-top 80px
+
+.projects_top
+  display flex
+  justify-content space-between
+
+.title
+  font-size 30px
+  color #333
+
+.search_box
+  display flex
+  input
+    outline none
+    flex 1
+    margin-right 4px
+    border 1px solid #f4f4f4
+    padding-left 6px
+    border-radius: 4px
+
+.projects_body
+  overflow: hidden
+  margin-top: 30px
+  .card_box
+    float: left
+    width 23.5%
+    background-color: #fff
+    margin-bottom: 20px
+    margin-right: 2%
+    border-radius: 4px
+    overflow hidden
+    &:nth-child(4n)
+      margin-right: 0
+    .card_cover
+      display block
+      padding-bottom: 75%
+      position relative
+      overflow: hidden
+      img
+        width: 100%
+        position absolute
+    .card_info
+      padding: 15px 15px 18px
+      .name
+        font-size 16px
+        color: #333
+      .subname
+        font-size: 14px
+        color: #999
+        margin-top: 10px
+       .pubtime
+         text-align: right
+         font-size: 12px
+         color: #ccc
+         margin-top: 20px

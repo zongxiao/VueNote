@@ -17,6 +17,8 @@ export default {
 </script>
 
 <style lang="stylus">
+.header
+  background-color: #ffffff
 .header_content
   display flex
   justify-content space-between
