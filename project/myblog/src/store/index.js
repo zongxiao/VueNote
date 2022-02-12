@@ -2,8 +2,25 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 const state = {
-  test: 'test',
-  myProjects: [
+  projectsBanner: {
+    mainBanner: {
+      name: "project1",
+      describe: 'this project is about...',
+      cover: "http://localhost:8080/img/project/009.jpg",
+      url: "https://github.com/zongxiao/countdown-days",
+      doneTime: '2021-12-12',
+      type: 'vue',
+    },
+    subBanner: {
+      name: "project1",
+      describe: 'this project is about...',
+      cover: "http://localhost:8080/img/project/003.jpg",
+      url: "https://github.com/zongxiao/countdown-days",
+      doneTime: '2021-12-12',
+      type: 'vue',
+    }
+  },
+  projects: [
     {
       name: "project1",
       describe: 'this project is about...',
@@ -45,19 +62,84 @@ const state = {
       type: 'stylus',
     },
     {
-      name: "project6",
+      name: "project5",
       describe: 'this project is about...',
-      cover: "http://localhost:8080/img/project/counterdays.jpeg",
+      cover: "http://localhost:8080/img/project/006.jpg",
+      url: "https://github.com/zongxiao/countdown-days",
+      doneTime: '2021-12-12',
+      type: 'stylus',
+    },
+    {
+      name: "project5",
+      describe: 'this project is about...',
+      cover: "http://localhost:8080/img/project/007.jpg",
+      url: "https://github.com/zongxiao/countdown-days",
+      doneTime: '2021-12-12',
+      type: 'stylus',
+    },
+    {
+      name: "project5",
+      describe: 'this project is about...',
+      cover: "http://localhost:8080/img/project/008.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'stylus',
     },
   ],
+  blogsBanner: {
+    mainBanner: {
+      name: "blog1",
+      describe: 'this blog is about...',
+      cover: "http://localhost:8080/img/project/002.jpg",
+      url: "https://github.com/zongxiao/countdown-days",
+      doneTime: '2021-12-12',
+      type: 'vue',
+    },
+    subBanner: {
+      name: "blog2",
+      describe: 'this project is about...',
+      cover: "http://localhost:8080/img/project/006.jpg",
+      url: "https://github.com/zongxiao/countdown-days",
+      doneTime: '2021-12-12',
+      type: 'vue',
+    }
+  },
+  blogs: [
+    {
+      name: "blog1",
+      describe: 'this blog1 is about...',
+      cover: "http://localhost:8080/img/project/001.jpg",
+      url: "https://github.com/zongxiao/countdown-days",
+      doneTime: '2021-12-12',
+      type: 'vue',
+    },
+    {
+      name: "blog2",
+      describe: 'this blog2 is about...',
+      cover: "http://localhost:8080/img/project/002.jpg",
+      url: "https://github.com/zongxiao/countdown-days",
+      doneTime: '2021-12-12',
+      type: 'vue',
+    },
+    {
+      name: "blog3",
+      describe: 'this blog3 is about...',
+      cover: "http://localhost:8080/img/project/003.jpg",
+      url: "https://github.com/zongxiao/countdown-days",
+      doneTime: '2021-12-12',
+      type: 'vue',
+    },
+    {
+      name: "blog4",
+      describe: 'this blog4 is about...',
+      cover: "http://localhost:8080/img/project/005.jpg",
+      url: "https://github.com/zongxiao/countdown-days",
+      doneTime: '2021-12-12',
+      type: 'vue',
+    },
+  ]
 }
 const getters = {
-  computedTest(state) {
-    return state.test += ' getters'
-  }
 }
 const actions = {}
 const mutations = {}

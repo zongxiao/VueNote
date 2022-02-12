@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header_content w1200">
-      <div class="logo">Silence37</div>
+      <div class="logo">SILENCE37</div>
       <ul class="navigation">
         <li><router-link :to="{ name: 'home' }">Home</router-link></li>
         <li><router-link :to="{ name: 'articles' }">Articles</router-link></li>
@@ -42,4 +42,5 @@ export default {
       color lightgray
       &.router-link-exact-active
         color gray
+        font-size 16px
 </style>

@@ -1,56 +1,89 @@
+translate-y(val)
+  transform: translateY(val)
+  -webkit-transform: translateY(val)
+  -moz-transform: translateY(val)
+
 .index_projects
   margin-top 80px
 
-.projects_top
+.projects_banner
+  overflow hidden
+  .main
+    width: 700px
+    height: 0
+    padding-bottom: 30%
+    position: relative
+    float: left
+    img
+      position: absolute
+      width: 100%
+      top: 50%
+      translate-y(-50%)
+  .sub
+    width: 480px
+    height: 0
+    padding-bottom: 30%
+    position: relative
+    float: right
+    img
+      position: absolute
+      width: 100%
+
+.projects_title
   display flex
   justify-content space-between
+  margin-top 30px
 
 .title
   font-size 30px
   color #333
+  font-weight: bold
 
 .search_box
   display flex
   input
     outline none
     flex 1
-    margin-right 4px
     border 1px solid #f4f4f4
     padding-left 6px
-    border-radius: 4px
+    border-radius 4px
 
 .projects_body
-  overflow: hidden
-  margin-top: 30px
+  overflow hidden
+  margin-top 30px
   .card_box
-    float: left
+    float left
     width 23.5%
-    background-color: #fff
-    margin-bottom: 20px
-    margin-right: 2%
-    border-radius: 4px
+    background-color #fff
+    margin-bottom 20px
+    margin-right 2%
+    border-radius 4px
     overflow hidden
     &:nth-child(4n)
-      margin-right: 0
+      margin-right 0
     .card_cover
       display block
-      padding-bottom: 75%
+      padding-bottom 75%
       position relative
-      overflow: hidden
+      overflow hidden
       img
-        width: 100%
+        width 100%
         position absolute
     .card_info
-      padding: 15px 15px 18px
+      padding 15px 15px 18px
       .name
-        font-size 16px
-        color: #333
+        a
+          font-size 16px
+          font-weight: bold
+          color #666
+          &:hover
+            color: #333
       .subname
-        font-size: 14px
-        color: #999
-        margin-top: 10px
+        font-size 14px
+        color #666
+        margin-top 10px
        .pubtime
-         text-align: right
-         font-size: 12px
-         color: #ccc
-         margin-top: 20px
+         text-align right
+         font-size 12px
+         color #999
+         margin-top 20px
