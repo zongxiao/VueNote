@@ -11,7 +11,6 @@
         <img src="../assets/img/banner/banner.png" alt=""/>
       </div>
     </div>
-    
   </div>
 </template>
 
