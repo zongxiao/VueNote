@@ -86,24 +86,6 @@ const state = {
       type: 'stylus',
     },
   ],
-  blogsBanner: {
-    mainBanner: {
-      name: "blog1",
-      describe: 'this blog is about...',
-      cover: "http://localhost:8080/img/project/002.jpg",
-      url: "https://github.com/zongxiao/countdown-days",
-      doneTime: '2021-12-12',
-      type: 'vue',
-    },
-    subBanner: {
-      name: "blog2",
-      describe: 'this project is about...',
-      cover: "http://localhost:8080/img/project/006.jpg",
-      url: "https://github.com/zongxiao/countdown-days",
-      doneTime: '2021-12-12',
-      type: 'vue',
-    }
-  },
   blogs: [
     {
       name: "blog1",
@@ -139,8 +121,7 @@ const state = {
     },
   ]
 }
-const getters = {
-}
+const getters = {}
 const actions = {}
 const mutations = {}
 

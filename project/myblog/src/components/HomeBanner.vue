@@ -30,8 +30,9 @@ export default {
 };
 </script>
 
-<style>
-.banner img {
-  width: 100%;
-}
+<style lang="stylus">
+.banner
+  font-size 0
+  img
+    width: 100%
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="index_projects w1200">
-    <div class="projects_banner">
+    <div class="projects_banner" v-if="MainAttr.ifBanner">
       <a class="main" :href="BannerObj.mainBanner.url">
         <img :src="BannerObj.mainBanner.cover">
       </a>
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import("../assets/css/components/home_projects.styl");
+import("../assets/css/components/home_pic_list.styl");
 export default {
   name: "HomePicList",
   data() {

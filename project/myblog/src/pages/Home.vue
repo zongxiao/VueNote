@@ -2,7 +2,7 @@
   <div>
     <HomeBanner />
     <HomePicList :MainAttr="projectAttr" :BannerObj="projectsBannerObj" :listArr="projectsArr"></HomePicList>
-    <HomePicList :MainAttr="blogAttr" :BannerObj="blogsBannerObj" :listArr="blogsArr"></HomePicList>
+    <HomePicList :MainAttr="blogAttr" :listArr="blogsArr"></HomePicList>
   </div>
 </template>
 
@@ -20,10 +20,12 @@ export default {
     return {
       projectAttr: {
         title: 'PROJECT',
+        ifBanner: true,
         ifSearch: true
       },
       blogAttr: {
         title: 'BLOG',
+        ifBanner: false,
         ifSearch: false
       }
     }
@@ -32,7 +34,7 @@ export default {
   },
   computed: {
     ...mapState({projectsArr: 'projects', projectsBannerObj: 'projectsBanner'}),
-    ...mapState({blogsArr: 'blogs', blogsBannerObj: 'blogsBanner'}),
+    ...mapState({blogsArr: 'blogs'}),
   },
 };
 </script>
