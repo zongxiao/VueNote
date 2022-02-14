@@ -27,10 +27,15 @@ export default {
         title: 'BLOG',
         ifBanner: false,
         ifSearch: false
-      }
+      },
+      opacity: 0.90,
     }
   },
-  mounted() {
+  activated() {
+    console.log('home路由组件激活')
+  },
+  deactivated() {
+    console.log('home路由组件失活')
   },
   computed: {
     ...mapState({projectsArr: 'projects', projectsBannerObj: 'projectsBanner'}),

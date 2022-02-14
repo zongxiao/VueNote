@@ -13,45 +13,36 @@
 <script>
 export default {
   name: "Header",
+  data() {
+    return {
+    };
+  }
 };
 </script>
 
 <style lang="stylus">
-.header {
-  background-color: #ffffff;
-}
-
-.header_content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-}
-
-.logo {
-  background: #ffffff;
-  color: #373737;
-  font-weight: bold;
-  padding: 10px 0;
-  font-size: 18px;
-}
-
-.navigation {
-  font-size: 14px;
-
-  li {
-    display: inline-block;
-
-    a {
-      padding: 20px 20px;
-      text-decoration: none;
-      color: lightgray;
-
-      &.router-link-exact-active {
-        color: #373737;
-        font-size: 16px;
-      }
-    }
-  }
-}
+.header
+  background-color #ffffff
+.header_content
+  display flex
+  justify-content space-between
+  align-items center
+  padding 20px 0
+.logo
+  background #ffffff
+  color #373737
+  font-weight bold
+  padding 10px 0
+  font-size 18px
+.navigation
+  font-size 14px
+  li
+    display inline-block
+    a
+      padding 20px 20px
+      text-decoration none
+      color lightgray
+      &.router-link-exact-active
+        color #373737
+        font-size 16px
 </style>

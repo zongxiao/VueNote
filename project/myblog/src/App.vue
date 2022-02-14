@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <AllHeader />
-    <router-view />
+    <!-- 缓存Home组件，使其不会被销毁 -->
+    <keep-alive :include="['Home', 'Articles']">
+      <router-view />
+    </keep-alive>
     <AllFooter />
   </div>
 </template>
