@@ -44,8 +44,11 @@
     padding-left 6px
     border-radius $border-radius
 .projects_body
-  overflow hidden
   margin-top 30px
+  &:after
+    content: ''
+    display: block
+    clear: left
   .card_box
     float left
     width 23.5%
@@ -53,7 +56,7 @@
     margin-bottom 20px
     margin-right 2%
     border-radius $border-radius
-    overflow hidden
+    box-shadow()
     &:nth-child(4n)
       margin-right 0
     .card_cover
@@ -64,9 +67,9 @@
       img
         width 100%
         position absolute
+        transition(0.2s)
         &:hover
-          transform scale(1.2)
-          transition(0.1s)
+          scale-all(1.1)
     .card_info
       padding 15px 15px 18px
       .name

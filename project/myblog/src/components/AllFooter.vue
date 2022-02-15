@@ -30,52 +30,39 @@ export default {
 </script>
 
 <style lang="stylus">
-.footer {
-  background: #373737;
-  margin-top: 80px;
+.footer
+  background #373737
+  margin-top 80px
+  .footer_content
+    padding 50px 0
+    .contact
+      .tit
+        font-size 30px
+        color #eee
+      .contact_info
+        display flex
+        margin-bottom 15px
+        padding-bottom 15px
+        border-bottom 1px solid #555
+        margin-top 30px
+        & > li
+          font-size 14px
+          color #aaa
+          line-height 1.4
+          margin-right 60px
+        for row in 1 2 3 4 5
+          li:nth-child({row})
+            opacity 0.75 + (row/20)
 
-  .footer_content {
-    padding: 50px 0;
-
-    .contact {
-      .tit {
-        font-size: 30px;
-        color: #eee;
-      }
-
-      .contact_info {
-        display: flex;
-        margin-bottom: 15px;
-        padding-bottom: 15px;
-        border-bottom: 1px solid #555;
-        margin-top: 30px;
-
-        >li {
-          font-size: 14px;
-          color: #aaa;
-          line-height: 1.4;
-          margin-right: 60px;
-        }
-      }
-
-      .copyright {
-        >p {
-          color: #aaa;
-          font-size: 14px;
-          line-height: 1.4;
-          margin-top: 15px;
-
-          a {
-            color: #aaa;
-            margin-left: 20px;
-
-            &:hover {
-              color: #eee;
-            }
-          }
-        }
-      }
-    }
-  }
-}
+      .copyright
+        & > p
+          color #aaa
+          font-size 14px
+          line-height 1.4
+          margin-top 15px
+          a
+            color #aaa
+            margin-left 20px
+            &:hover
+              color #eee
 </style>

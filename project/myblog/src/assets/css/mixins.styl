@@ -3,23 +3,34 @@ $background-color = #fefefe
 $color = #333
 $border-color = #fefefe
 $border-radius = 6px
+
+// [slot]
+vender(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+
 // [function]
-// border: border(2px)
+// border(2px)
 border()
   border arguments solid $border-color
+
 // box-shadow: box-shadow(3px, 0.75)
-box-shadow(spade = 5px, opaci = 0.5)
-  box-shadow 0, 0, spade, rgba(0, 0, 0, opaci)
-// transform: translate-y(20px)
-translate-y(val)
-  transform translateY(val)
-  -webkit-transform translateY(val)
-  -moz-transform translateY(val)
-// transform: translate-x(20px)
+box-shadow(spade = 10px, opaci = 0.1)
+  vender('box-shadow', (0 0 spade rgba(0, 0, 0, opaci)))
+
+// translate-x(-50%)
 translate-x(val)
-  transform translateX(val)
-  -webkit-transform translateX(val)
-  -moz-transform translateX(val)
+  vender('transform', translateX(val))
+
+// translate-y(-50%)
+translate-y(val)
+  vender('transform', translateY(val))
+
+// scale-all(1.2)
+scale-all(x, y = x)
+  vender('transform', scale(x, y))
+
 // transition(0.5s)
 transition(time = 0.35s)
-  transition all linear time
+  vender('transition', (all time))
