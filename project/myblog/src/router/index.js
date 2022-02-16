@@ -14,6 +14,9 @@ const routes = [
     path: '/articles',
     component: Articles,
     name: 'articles',
+    meta: {
+      isAuth: true
+    },
     children: [
       {
         path: 'detail/:id',
@@ -29,7 +32,15 @@ const router =  new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log(from, to)
-  next()
+  if (to.meta.isAuth) {
+    if (localStorage.getItem('name') === 'zs') {
+      alert('全局前置路由守卫通过你的审核')
+      next()
+    } else {
+      alert('对不起，你不允许到达' + to.path)
+    }
+  } else {
+    next()
+  }
 })
 export default router

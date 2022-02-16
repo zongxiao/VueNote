@@ -6,7 +6,7 @@ const state = {
     mainBanner: {
       name: "project1",
       describe: 'this project is about...',
-      cover: "http://localhost:8080/img/project/009.jpg",
+      cover: "/img/project/009.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'vue',
@@ -14,7 +14,7 @@ const state = {
     subBanner: {
       name: "project1",
       describe: 'this project is about...',
-      cover: "http://localhost:8080/img/project/003.jpg",
+      cover: "/img/project/003.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'vue',
@@ -24,7 +24,7 @@ const state = {
     {
       name: "project1",
       describe: 'this project is about...',
-      cover: "http://localhost:8080/img/project/001.jpg",
+      cover: "/img/project/001.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'vue',
@@ -32,7 +32,7 @@ const state = {
     {
       name: "project2",
       describe: 'this project is about...',
-      cover: "http://localhost:8080/img/project/002.jpg",
+      cover: "/img/project/002.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'vue',
@@ -40,7 +40,7 @@ const state = {
     {
       name: "project3",
       describe: 'this project is about...',
-      cover: "http://localhost:8080/img/project/003.jpg",
+      cover: "/img/project/003.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'js',
@@ -48,7 +48,7 @@ const state = {
     {
       name: "project4",
       describe: 'this project is about...',
-      cover: "http://localhost:8080/img/project/004.jpg",
+      cover: "/img/project/004.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'vue',
@@ -56,7 +56,7 @@ const state = {
     {
       name: "project5",
       describe: 'this project is about...',
-      cover: "http://localhost:8080/img/project/005.jpg",
+      cover: "/img/project/005.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'stylus',
@@ -64,7 +64,7 @@ const state = {
     {
       name: "project5",
       describe: 'this project is about...',
-      cover: "http://localhost:8080/img/project/006.jpg",
+      cover: "/img/project/006.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'stylus',
@@ -72,7 +72,7 @@ const state = {
     {
       name: "project5",
       describe: 'this project is about...',
-      cover: "http://localhost:8080/img/project/007.jpg",
+      cover: "/img/project/007.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'stylus',
@@ -80,7 +80,7 @@ const state = {
     {
       name: "project5",
       describe: 'this project is about...',
-      cover: "http://localhost:8080/img/project/008.jpg",
+      cover: "/img/project/008.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'stylus',
@@ -90,7 +90,7 @@ const state = {
     {
       name: "blog1",
       describe: 'this blog1 is about...',
-      cover: "http://localhost:8080/img/project/001.jpg",
+      cover: "/img/project/001.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'vue',
@@ -98,7 +98,7 @@ const state = {
     {
       name: "blog2",
       describe: 'this blog2 is about...',
-      cover: "http://localhost:8080/img/project/002.jpg",
+      cover: "/img/project/002.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'vue',
@@ -106,7 +106,7 @@ const state = {
     {
       name: "blog3",
       describe: 'this blog3 is about...',
-      cover: "http://localhost:8080/img/project/003.jpg",
+      cover: "/img/project/003.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'vue',
@@ -114,7 +114,7 @@ const state = {
     {
       name: "blog4",
       describe: 'this blog4 is about...',
-      cover: "http://localhost:8080/img/project/005.jpg",
+      cover: "/img/project/005.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
       type: 'vue',

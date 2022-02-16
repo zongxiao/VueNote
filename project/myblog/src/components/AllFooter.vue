@@ -52,7 +52,7 @@ export default {
           margin-right 60px
         for row in 1 2 3 4 5
           li:nth-child({row})
-            opacity 0.75 + (row/20)
+            opacity 1 + (row/20)
 
       .copyright
         & > p

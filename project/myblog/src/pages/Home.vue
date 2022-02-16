@@ -20,7 +20,7 @@ export default {
     return {
       projectAttr: {
         title: 'PROJECT',
-        ifBanner: true,
+        ifBanner: false,
         ifSearch: true
       },
       blogAttr: {

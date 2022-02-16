@@ -55,8 +55,17 @@
     background-color #fff
     margin-bottom 20px
     margin-right 2%
-    border-radius $border-radius
-    box-shadow()
+    border-radius: $border-radius
+    position relative
+    top 0
+    transition(0.2s)
+    &:hover
+      box-shadow(0, 15px, 30px, 0.1)
+      top -5px
+      .card_cover > img
+        scale-all(1.1)
+      .card_info .name > a
+        color: #3d7eff
     &:nth-child(4n)
       margin-right 0
     .card_cover
@@ -64,21 +73,19 @@
       padding-bottom 75%
       position relative
       overflow hidden
+      border-top-left-radius: $border-radius
+      border-top-right-radius: $border-radius
       img
         width 100%
         position absolute
         transition(0.2s)
-        &:hover
-          scale-all(1.1)
     .card_info
       padding 15px 15px 18px
       .name
         a
           font-size 16px
           font-weight bold
-          color #666
-          &:hover
-            color #333
+          color #333
       .subname
         font-size 14px
         color #666
