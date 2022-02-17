@@ -8,14 +8,19 @@ const routes = [
   {
     path: '/',
     component: Home,
-    name: 'home'
+    name: 'home',
+    meta: {
+      isAuth: true,
+      title: 'Home'
+    }
   },
   {
     path: '/articles',
     component: Articles,
     name: 'articles',
     meta: {
-      isAuth: true
+      isAuth: true,
+      title: 'article'
     },
     children: [
       {
@@ -28,19 +33,26 @@ const routes = [
   }
 ]
 const router =  new VueRouter({
+  mode: 'history', // history or hash
   routes
 })
 
 router.beforeEach((to, from, next) => {
   if (to.meta.isAuth) {
     if (localStorage.getItem('name') === 'zs') {
-      alert('全局前置路由守卫通过你的审核')
       next()
     } else {
-      alert('对不起，你不允许到达' + to.path)
+      alert('对不起，你不允许访问' + to.path)
     }
   } else {
     next()
+  }
+})
+
+router.afterEach((to, from) => {
+  console.log(to, from)
+  if(to.meta.title){ 
+    document.title = to.meta.title
   }
 })
 export default router
