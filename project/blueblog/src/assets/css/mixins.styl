@@ -1,0 +1,36 @@
+// [var]
+$background-color = #fefefe
+$color = #333
+$border-color = #fefefe
+$border-radius = 6px
+
+// [slot]
+vender(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+
+// [function]
+// border(2px)
+border()
+  border arguments solid $border-color
+
+// box-shadow: box-shadow(3px, 0.75)
+box-shadow(right = 0px, top = 0px, spade = 10px, opaci = 0.1)
+  vender('box-shadow', (right top spade rgba(0, 0, 0, opaci)))
+
+// translate-x(-50%)
+translate-x(val)
+  vender('transform', translateX(val))
+
+// translate-y(-50%)
+translate-y(val)
+  vender('transform', translateY(val))
+
+// scale-all(1.2)
+scale-all(x, y = x)
+  vender('transform', scale(x, y))
+
+// transition(0.5s)
+transition(time = 0.35s)
+  vender('transition', (all time))
