@@ -1,6 +1,7 @@
 <template>
   <div>
     <HomeBanner />
+    <HomeAbout />
     <HomePicList :MainAttr="projectAttr" :BannerObj="projectsBannerObj" :listArr="projectsArr"></HomePicList>
     <HomePicList :MainAttr="blogAttr" :listArr="blogsArr"></HomePicList>
   </div>
@@ -9,11 +10,13 @@
 <script>
 import { mapState } from "vuex";
 import HomeBanner from "../components/HomeBanner.vue";
+import HomeAbout from "../components/HomeAbout.vue";
 import HomePicList from "../components/HomePicList.vue";
 export default {
   name: "Home",
   components: {
     HomeBanner,
+    HomeAbout,
     HomePicList
   },
   data() {

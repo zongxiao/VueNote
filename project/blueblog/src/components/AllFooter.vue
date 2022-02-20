@@ -37,7 +37,8 @@ export default {
     padding 50px 0
     .contact
       .tit
-        font-size 30px
+        font-size 36px
+        font-weight: bold
         color #eee
       .contact_info
         display flex

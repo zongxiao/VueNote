@@ -10,22 +10,23 @@
 </template>
 
 <script>
-import('./assets/css/common.styl')
-import AllHeader from './components/AllHeader.vue'
-import AllFooter from './components/AllFooter.vue'
+import("./assets/css/common.styl");
+import AllHeader from "./components/AllHeader.vue";
+import AllFooter from "./components/AllFooter.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     AllHeader,
-    AllFooter
-  }
-}
+    AllFooter,
+  },
+};
 </script>
 
-<style>
-  .w1200 {
-    max-width: 1226px;
-    width: 100%;
-    margin: 0 auto;
-  }
+<style lang="stylus">
+@import './assets/css/mixins.styl'
+.w1200 {
+  max-width: 1226px;
+  width: 100%;
+  margin: 0 auto;
+}
 </style>

@@ -2,15 +2,16 @@
   <div class="banner swiper-container w1200">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="../assets/img/banner/banner.png" alt="" />
+        <a href=""><img src="../assets/img/banner/banner.png" alt="" /></a>
       </div>
       <div class="swiper-slide">
-        <img src="../assets/img/banner/banner.png" alt="" />
+        <a href=""><img src="../assets/img/banner/banner.png" alt="" /></a>
       </div>
       <div class="swiper-slide">
-        <img src="../assets/img/banner/banner.png" alt="" />
+        <a href=""><img src="../assets/img/banner/banner.png" alt="" /></a>
       </div>
     </div>
+    <div class="swiper-pagination"></div>
   </div>
 </template>
 
@@ -22,17 +23,35 @@ export default {
   swiper: null,
   mounted() {
     this.swiper = new Swiper(".swiper-container", {
-      speed: 3000,
-      autoplay: 3000,
+      speed: 1000,
+      autoplay: 4000,
+      pagination : '.swiper-pagination',
+      paginationClickable :true,
     });
   },
 };
 </script>
 
 <style lang="stylus">
+@import '../assets/css/mixins.styl'
 .banner
   font-size 0
   margin-top 16px
-  img
-    width 100%
+  .swiper-wrapper
+    .swiper-slide
+      img
+        width 100%
+  .swiper-pagination
+    display: inline-block
+    width: auto
+    padding: 6px 7.5px
+    border-radius: 13.5px
+    background-color: #fff
+    left: 50%
+    bottom: 22px
+    translate-x(-50%)
+    .swiper-pagination-bullet
+      width: 15px
+      height: 15px
+      margin: 0 7.5px
 </style>

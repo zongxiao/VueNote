@@ -1,6 +1,6 @@
 @import '../mixins.styl'
 .index_projects
-  margin-top 80px
+  margin-top 40px
 .projects_banner
   overflow hidden
   margin-bottom 30px
@@ -32,8 +32,8 @@
   display flex
   justify-content space-between
 .title
-  font-size 30px
-  color #333
+  font-size 36px
+  color #3d7eff
   font-weight bold
 .search_box
   display flex
@@ -44,7 +44,6 @@
     padding-left 6px
     border-radius $border-radius
 .projects_body
-  margin-top 30px
   &:after
     content: ''
     display: block
@@ -53,7 +52,7 @@
     float left
     width 23.5%
     background-color #fff
-    margin-bottom 20px
+    margin-top 20px
     margin-right 2%
     border-radius: $border-radius
     position relative
@@ -85,13 +84,16 @@
         a
           font-size 16px
           font-weight bold
-          color #333
+          color #3d7eff
       .subname
         font-size 14px
-        color #666
+        color #b0b0b0
         margin-top 10px
+        line-height: 20px
+        height: 40px
+        overflow: hidden
       .pubtime
         text-align right
         font-size 12px
-        color #999
-        margin-top 20px
+        color #b0b0b0
+        margin-top 10px

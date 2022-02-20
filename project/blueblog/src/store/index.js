@@ -5,7 +5,7 @@ const state = {
   projectsBanner: {
     mainBanner: {
       name: "project1",
-      describe: 'this project is about...',
+      describe: 'this project is about...this project is about..this project is about',
       cover: "/img/project/009.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',
@@ -23,7 +23,7 @@ const state = {
   projects: [
     {
       name: "project1",
-      describe: 'this project is about...',
+      describe: 'this project is about...this project is about..this project is about',
       cover: "/img/project/001.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',

@@ -59,3 +59,12 @@ a {
 a:hover {
 	color: #000;
 }
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #aaa;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #aaa;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #aaa;
+}
