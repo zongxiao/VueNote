@@ -1,7 +1,7 @@
 <template>
   <div class="banner swiper-container w1200">
     <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="item in bannerInfo" :key="item.id">
+      <div class="swiper-slide" v-for="item in BannerInfo" :key="item.id">
         <a :href="item.url"><img :src="item.imgurl" alt="" /></a>
       </div>
     </div>
@@ -14,7 +14,7 @@ import Swiper from "swiper";
 import "swiper/dist/css/swiper.min.css";
 export default {
   name: "Banner",
-  props: ['bannerInfo'],
+  props: ['BannerInfo'],
   swiper: null,
   mounted() {
     this.swiper = new Swiper(".swiper-container", {

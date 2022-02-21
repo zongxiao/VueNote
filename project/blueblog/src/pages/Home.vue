@@ -9,7 +9,7 @@
 
 <script>
 import { mapState } from "vuex";
-import nanoid from 'nanoid'
+import { nanoid } from 'nanoid'
 import Banner from "../components/Banner.vue";
 import HomeAbout from "../components/HomeAbout.vue";
 import HomePicList from "../components/HomePicList.vue";
