@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HomeBanner />
+    <Banner :BannerInfo="bannerInfo" />
     <HomeAbout />
     <HomePicList :MainAttr="projectAttr" :BannerObj="projectsBannerObj" :listArr="projectsArr"></HomePicList>
     <HomePicList :MainAttr="blogAttr" :listArr="blogsArr"></HomePicList>
@@ -9,21 +9,34 @@
 
 <script>
 import { mapState } from "vuex";
-import HomeBanner from "../components/HomeBanner.vue";
+import nanoid from 'nanoid'
+import Banner from "../components/Banner.vue";
 import HomeAbout from "../components/HomeAbout.vue";
 import HomePicList from "../components/HomePicList.vue";
 export default {
   name: "Home",
   components: {
-    HomeBanner,
+    Banner,
     HomeAbout,
     HomePicList
   },
   data() {
     return {
+      bannerInfo: [
+        {
+          id: nanoid(),
+          url: 'http://www.baidu.com',
+          imgurl: '/img/banner/home_banner.png'
+        },
+        {
+          id: nanoid(),
+          url: 'http://www.baidu.com',
+          imgurl: '/img/banner/home_banner.png'
+        }
+      ],
       projectAttr: {
         title: 'PROJECT',
-        ifBanner: false,
+        ifBanner: true,
         ifSearch: true
       },
       blogAttr: {

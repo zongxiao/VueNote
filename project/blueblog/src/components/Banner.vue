@@ -1,14 +1,8 @@
 <template>
   <div class="banner swiper-container w1200">
     <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <a href=""><img src="../assets/img/banner/banner.png" alt="" /></a>
-      </div>
-      <div class="swiper-slide">
-        <a href=""><img src="../assets/img/banner/banner.png" alt="" /></a>
-      </div>
-      <div class="swiper-slide">
-        <a href=""><img src="../assets/img/banner/banner.png" alt="" /></a>
+      <div class="swiper-slide" v-for="item in bannerInfo" :key="item.id">
+        <a :href="item.url"><img :src="item.imgurl" alt="" /></a>
       </div>
     </div>
     <div class="swiper-pagination"></div>
@@ -20,6 +14,7 @@ import Swiper from "swiper";
 import "swiper/dist/css/swiper.min.css";
 export default {
   name: "Banner",
+  props: ['bannerInfo'],
   swiper: null,
   mounted() {
     this.swiper = new Swiper(".swiper-container", {

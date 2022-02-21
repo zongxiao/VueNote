@@ -4,6 +4,7 @@ Vue.use(VueRouter)
 import Home from '../pages/Home.vue'
 import Articles from '../pages/Articles.vue'
 import Detail from '../pages/Detail.vue'
+import Todos from '../pages/Todos.vue'
 const routes = [
   {
     path: '/',
@@ -12,6 +13,15 @@ const routes = [
     meta: {
       isAuth: false,
       title: 'Home'
+    }
+  },
+  {
+    path: '/todos',
+    component: Todos,
+    name: 'todos',
+    meta: {
+      isAuth: false,
+      title: 'Todos'
     }
   },
   {

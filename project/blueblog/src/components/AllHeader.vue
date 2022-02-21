@@ -5,6 +5,7 @@
       <ul class="navigation">
         <li><router-link :to="{ name: 'home' }">HOME</router-link></li>
         <li><router-link :to="{ name: 'articles' }">BLOGS</router-link></li>
+        <li><router-link :to="{ name: 'todos' }">TODOS</router-link></li>
       </ul>
       <div class="search">
         <input type="text" v-model="topSearch" placeholder="今晚吃啥呢？"><span @click="handleSearch" class="el-icon-search icon_search"></span>
@@ -37,7 +38,6 @@ export default {
   display flex
   justify-content space-between
   align-items center
-  // padding 0px 50px
   box-sizing: border-box
 .logo
   background #ffffff
