@@ -22,7 +22,7 @@ const routes = [
     meta: {
       isAuth: false,
       title: 'Todos'
-    }
+    },
   },
   {
     path: '/articles',
