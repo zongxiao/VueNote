@@ -2,15 +2,21 @@
   <div>
     <Banner :BannerInfo="bannerInfo" />
     <div class="todos_box w1200">
-      <div class="nav">
+      <div class="left_box">
         <ul>
-          <li :class="{ active: ifTodosDoing }" @click="showDoing">doinig</li>
-          <li :class="{ active: !ifTodosDoing }" @click="showDone">done</li>
+          <li :class="{ active: ifTodosDoing }" @click="showDoing">DOING</li>
+          <li :class="{ active: !ifTodosDoing }" @click="showDone">FINISHED</li>
         </ul>
       </div>
-      <div class="contentain">
-        <TodosDoing v-show="ifTodosDoing" :todos="todos" />
-        <TodosDone v-show="!ifTodosDoing" />
+      <div class="right_box">
+        <div class="com_box edit_box" v-show="ifTodosDoing">
+          <AddTodo />
+        </div>
+
+        <div class="com_box list_box">
+          <TodosDoing v-show="ifTodosDoing" :todos="todos" />
+          <TodosDone v-show="!ifTodosDoing" />
+        </div>
       </div>
     </div>
   </div>
@@ -20,12 +26,14 @@
 import Banner from "../components/Banner.vue";
 import TodosDoing from "../components/TodosDoing.vue";
 import TodosDone from "../components/TodosDone.vue";
+import AddTodo from '../components/AddTodo.vue'
 export default {
   name: "Todos",
   components: {
     Banner,
     TodosDoing,
     TodosDone,
+    AddTodo
   },
   data() {
     return {
@@ -33,11 +41,16 @@ export default {
         {
           id: "001",
           url: "http://www.baidu.com",
-          imgurl: "/img/banner/todos_banner.png",
+          imgurl: "/img/banner/todos_banner2.jpg",
+        },
+        {
+          id: "002",
+          url: "http://www.baidu.com",
+          imgurl: "/img/banner/todos_banner1.jpg",
         },
       ],
       ifTodosDoing: true,
-      todos: []
+      todos: JSON.parse(localStorage.getItem('todos')) || []
     };
   },
   methods: {
@@ -53,6 +66,16 @@ export default {
   },
   mounted() {
     this.$bus.$on('addTodo', this.addTodo)
+  },
+  watch:{
+    todos:{
+      immediate: true, //初始化时让handler调用一下
+      //handler什么时候调用？当todos发生改变时。
+      handler(newValue){
+        localStorage.setItem('todos', JSON.stringify(newValue))
+        console.log(newValue)
+      }
+    }
   }
 };
 </script>
@@ -62,10 +85,10 @@ export default {
   margin-top: 40px;
   display: flex;
 
-  .nav {
-    margin-right: 20px;
-    background-color: #fff;
-    padding: 30px;
+  .left_box {
+    margin-right: 10px;
+    background-color: #fefefe;
+    padding: 30px 40px;
 
     ul {
       li {
@@ -75,15 +98,26 @@ export default {
         color: #808080;
         &.active {
           color: #3d7eff
+          text-decoration: underline
         }
       }
     }
   }
 
-  .contentain {
-    flex: 1;
-    background-color: #fefefe;
-    padding: 30px;
+  .right_box {
+    flex: 1
+    display: flex
+    flex-direction: column
+    .com_box {
+      background-color: #fefefe
+      padding: 30px
+    }
+    .edit_box {
+      margin-bottom: 10px
+    }
+    .list_box {
+      padding-bottom: 100px
+    }
   }
 }
 </style>
