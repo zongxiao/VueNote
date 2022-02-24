@@ -62,10 +62,20 @@ export default {
     },
     addTodo(todoObj) {
       this.todos.push(todoObj)
+    },
+    changeTodoState(id) {
+      this.todos.forEach(element => {
+        element.id !== id ? '' : element.done = !element.done
+      });
+    },
+    changeAllTodoState(value) {
+      this.todos.forEach(element => element.done = value)
     }
   },
   mounted() {
     this.$bus.$on('addTodo', this.addTodo)
+    this.$bus.$on('changeTodoState', this.changeTodoState)
+    this.$bus.$on('changeAllTodoState', this.changeAllTodoState)
   },
   watch:{
     todos:{

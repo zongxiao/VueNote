@@ -4,12 +4,14 @@
       <ul>
         <TodosDoingItem v-for="item in todos" :key="item.id" :todo="item"></TodosDoingItem>
       </ul>
+      <TodosDoingState :todos="todos"></TodosDoingState>
     </div>
   </div>
 </template>
 
 <script>
 import TodosDoingItem from './TodosDoingItem.vue'
+import TodosDoingState from './TodosDoingState.vue'
 export default {
   name: "TodosDoing",
   props: ['todos'],
@@ -18,7 +20,8 @@ export default {
     };
   },
   components: {
-    TodosDoingItem
+    TodosDoingItem,
+    TodosDoingState
   },
   mounted() {
   },
