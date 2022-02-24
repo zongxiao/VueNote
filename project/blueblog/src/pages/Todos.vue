@@ -12,7 +12,6 @@
         <div class="com_box edit_box" v-show="ifTodosDoing">
           <AddTodo />
         </div>
-
         <div class="com_box list_box">
           <TodosDoing v-show="ifTodosDoing" :todos="todos" />
           <TodosDone v-show="!ifTodosDoing" />

@@ -4,7 +4,7 @@
       <ul>
         <TodosDoingItem v-for="item in todos" :key="item.id" :todo="item"></TodosDoingItem>
       </ul>
-      <TodosDoingState :todos="todos"></TodosDoingState>
+      <TodosDoingState :todos="todos" v-if="this.todos.length"></TodosDoingState>
     </div>
   </div>
 </template>

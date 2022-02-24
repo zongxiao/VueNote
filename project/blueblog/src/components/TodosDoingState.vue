@@ -26,7 +26,7 @@ export default {
     },
     allTotoState: {
       get() {
-        return this.todosFinishedLength === this.todosLength
+        return this.todosFinishedLength === this.todosLength && this.todosLength > 0
       },
       set(value) {
         this.$bus.$emit('changeAllTodoState', value)

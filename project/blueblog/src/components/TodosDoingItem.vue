@@ -3,7 +3,7 @@
     <label
       ><el-checkbox
         class="check_box"
-        :checked="todo.done"
+        :value="todo.done"
         @change="handleTodoState(todo.id)"
       ></el-checkbox
       ><span class="name" :class="{ checked: todo.done }">{{ todo.name }}</span
