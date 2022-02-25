@@ -1,12 +1,12 @@
 <template>
   <div class="input_todo_box">
-    <!-- <div class="label">ADD TODO</div> -->
+    <!-- <div class="label">NEW TODO</div> -->
     <el-input class="input_todo" placeholder="请输入内容" clearable v-model="inputTodo">
       <i slot="prefix" class="el-input__icon el-icon-edit"></i>
     </el-input>
     <el-date-picker  class="input_todo" v-model="inputTodoTime" type="date" placeholder="选择日期">
     </el-date-picker>
-    <el-button type="primary" icon="el-icon-plus" @click="HandleAddTodo">添加</el-button>
+    <el-button type="primary" @click="HandleAddTodo">添加</el-button>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
           showClose: true,
           message: '请输入内容和选择时间',
           type: 'warning',
-          offset: 300
+          offset: 200
         });
         return false
       }
@@ -50,10 +50,9 @@ export default {
   display: flex
   align-items: center
   .label
-    color: #3d7eff
-    font-size: 16px
+    color: #333
+    font-size: 14px
     margin-right: 20px
-    font-weight: bold
   .input_todo
     margin-right: 10px
     flex: 1

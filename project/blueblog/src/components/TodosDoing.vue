@@ -4,6 +4,7 @@
       <ul>
         <TodosDoingItem v-for="item in todos" :key="item.id" :todo="item"></TodosDoingItem>
       </ul>
+      <el-empty v-if="!todos.length" description="恭喜你，你可以摸鱼了"></el-empty>
       <TodosDoingState :todos="todos" v-if="this.todos.length"></TodosDoingState>
     </div>
   </div>
@@ -33,7 +34,8 @@ export default {
 <style lang="stylus" socped>
 .todos
   ul
-    border-radius: 6px
+    border-top-left-radius: 6px
+    border-top-right-radius: 6px
     border-left: 1px solid #eee
     border-right: 1px solid #eee
 </style>

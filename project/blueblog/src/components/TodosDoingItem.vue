@@ -21,6 +21,7 @@
         size="small"
         icon="el-icon-delete"
         circle
+        @click="handleDeleteTodo(todo.id)"
       ></el-button>
     </div>
   </li>
@@ -33,6 +34,9 @@ export default {
   methods: {
     handleTodoState(id) {
       this.$bus.$emit('changeTodoState', id)
+    },
+    handleDeleteTodo(id) {
+      this.$bus.$emit('handleDeleteTodo', id)
     }
   }
 };
@@ -64,15 +68,25 @@ export default {
     .el-checkbox__inner {
       border: 1px solid #999;
     }
+    .is-focus {
+      .el-checkbox__inner {
+        border: 1px solid #999;
+      }
+    }
+    .is-checked {
+      .el-checkbox__inner {
+        border: 1px solid #409EFF
+      }
+    }
   }
 
   .name {
     margin-left: 5px;
-    font-size: 15px;
-    color: #333;
+    font-size: 14px;
+    color: #666;
 
     &.checked {
-      color: #409EFF;
+      // color: #409EFF;
     }
   }
 

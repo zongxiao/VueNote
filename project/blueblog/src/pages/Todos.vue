@@ -69,12 +69,20 @@ export default {
     },
     changeAllTodoState(value) {
       this.todos.forEach(element => element.done = value)
+    },
+    handleDeleteTodo(id) {
+      this.todos = this.todos.filter(element => element.id !== id)
+    },
+    setTodosState() {
+      this.todos = this.todos.filter(element => element.done)
     }
   },
   mounted() {
     this.$bus.$on('addTodo', this.addTodo)
     this.$bus.$on('changeTodoState', this.changeTodoState)
     this.$bus.$on('changeAllTodoState', this.changeAllTodoState)
+    this.$bus.$on('handleDeleteTodo', this.handleDeleteTodo)
+    this.$bus.$on('setTodosState', this.setTodosState)
   },
   watch:{
     todos:{
@@ -82,7 +90,6 @@ export default {
       //handler什么时候调用？当todos发生改变时。
       handler(newValue){
         localStorage.setItem('todos', JSON.stringify(newValue))
-        console.log(newValue)
       }
     }
   }
