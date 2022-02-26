@@ -6,7 +6,7 @@
       <span class="time">({{ todo.time | timeFormat }})</span>
     </label>
     <div class="edit_box" v-show="todo.isEditing">
-      <el-input class="edit_input" size="mini" v-model="todo.name" placeholder="请输入内容" ref="editInput" @blur="handleBlur(todo, $event)"><i slot="prefix" class="el-input__icon el-icon-edit"></i></el-input>
+      <el-input class="edit_input" size="mini" v-model="todo.name" placeholder="请输入内容" ref="editInput" @blur="alterTodo(todo, $event)"><i slot="prefix" class="el-input__icon el-icon-edit"></i></el-input>
     </div>
     <div class="operation">
       <el-button v-show="!todo.isEditing" type="primary" plain size="mini" icon="el-icon-edit" @click="handleEditState(todo)">编辑</el-button>
@@ -39,6 +39,7 @@ export default {
     handleBlur(todoObj, e) {
       todoObj.isEditing = false
       e.currentTarget.value
+
     }
   },
 };
