@@ -5,7 +5,7 @@
         <TodosDoingItem v-for="item in todos" :key="item.id" :todo="item"></TodosDoingItem>
       </ul>
       <el-empty v-if="!todos.length" description="恭喜你，你可以摸鱼了"></el-empty>
-      <TodosDoingState :todos="todos" v-if="this.todos.length"></TodosDoingState>
+      <TodosDoingState :todos="todos" v-if="todos.length" class="fixed_bottom"></TodosDoingState>
     </div>
   </div>
 </template>

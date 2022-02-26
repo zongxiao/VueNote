@@ -5,7 +5,7 @@
       <span class="checkd_num">选中：{{ todosFinishedLength }}/</span>
       <span class="total_num">{{ todosLength }}</span>
     </label>
-    <el-button type="primary" icon="el-icon-check" round size="mini" plain class="finished_btn" v-show="todosFinishedLength" @click="setTodosState">设为已完成</el-button>
+    <el-button type="success" icon="el-icon-finished"  size="small"  class="finished_btn" v-show="todosFinishedLength" @click="sortByTodosState">I have done</el-button>
   </div>
 </template>
 
@@ -35,8 +35,8 @@ export default {
     },
   },
   methods: {
-    setTodosState() {
-      this.$bus.$emit('setTodosState')
+    sortByTodosState() {
+      this.$bus.$emit('sortByTodosState')
     }
   },
 };
@@ -44,14 +44,13 @@ export default {
 
 <style lang="stylus">
 .all_state_box {
-  padding: 0 20px;
-  height: 54px
+  padding: 0px 0px 0 20px;
   display: flex
+  height: 80px
   align-items: center
-  border: 1px solid #eee
+  justify-content: space-between
+  border: 1px solid rgba(0, 0, 0, 0)
   border-top: 1px solid rgba(0, 0, 0, 0)
-  border-bottom-left-radius: 6px
-  border-bottom-right-radius: 6px
   .label {
     cursor: pointer
     font-size: 14px

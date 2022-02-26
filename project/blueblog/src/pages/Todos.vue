@@ -14,7 +14,7 @@
         </div>
         <div class="com_box list_box">
           <TodosDoing v-show="ifTodosDoing" :todos="todos" />
-          <TodosDone v-show="!ifTodosDoing" />
+          <TodosDone v-show="!ifTodosDoing" :todosDone="todosDone" />
         </div>
       </div>
     </div>
@@ -49,7 +49,8 @@ export default {
         },
       ],
       ifTodosDoing: true,
-      todos: JSON.parse(localStorage.getItem('todos')) || []
+      todos: JSON.parse(localStorage.getItem('todos')) || [],
+      todosDone: JSON.parse(localStorage.getItem('todosDone')) || []
     };
   },
   methods: {
@@ -73,8 +74,9 @@ export default {
     handleDeleteTodo(id) {
       this.todos = this.todos.filter(element => element.id !== id)
     },
-    setTodosState() {
-      this.todos = this.todos.filter(element => element.done)
+    sortByTodosState() {
+      this.todosDone = [...this.todos.filter(element => element.done === true).reverse(), ...this.todosDone]
+      this.todos = this.todos.filter(element => element.done === false)
     }
   },
   mounted() {
@@ -82,14 +84,20 @@ export default {
     this.$bus.$on('changeTodoState', this.changeTodoState)
     this.$bus.$on('changeAllTodoState', this.changeAllTodoState)
     this.$bus.$on('handleDeleteTodo', this.handleDeleteTodo)
-    this.$bus.$on('setTodosState', this.setTodosState)
+    this.$bus.$on('sortByTodosState', this.sortByTodosState)
   },
   watch:{
-    todos:{
+    todos: {
       immediate: true, //初始化时让handler调用一下
       //handler什么时候调用？当todos发生改变时。
       handler(newValue){
         localStorage.setItem('todos', JSON.stringify(newValue))
+      }
+    },
+    todosDone: {
+      immediate: true,
+      handler(newValue){
+        localStorage.setItem('todosDone', JSON.stringify(newValue))
       }
     }
   }

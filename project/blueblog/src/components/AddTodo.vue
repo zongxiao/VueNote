@@ -1,23 +1,34 @@
 <template>
-  <div class="input_todo_box">
-    <!-- <div class="label">NEW TODO</div> -->
-    <el-input class="input_todo" placeholder="请输入内容" clearable v-model="inputTodo">
+  <div class="input_todo_box" @keyup.enter="HandleAddTodo">
+    <el-input
+      class="input_todo"
+      placeholder="这里输入你要做的事情"
+      clearable
+      v-model="inputTodo"
+    >
       <i slot="prefix" class="el-input__icon el-icon-edit"></i>
     </el-input>
-    <el-date-picker  class="input_todo" v-model="inputTodoTime" type="date" placeholder="选择日期">
+
+    <div class="label">完成日期</div>
+    <el-date-picker
+      class="input_todo"
+      v-model="inputTodoTime"
+      type="date"
+      placeholder="选择你期待完成的日期，默认是今天"
+    >
     </el-date-picker>
-    <el-button type="primary" @click="HandleAddTodo">添加</el-button>
+    <el-button plain @click="HandleAddTodo">添加</el-button>
   </div>
 </template>
 
 <script>
-import { nanoid } from 'nanoid'
+import { nanoid } from "nanoid";
 export default {
   name: "AddTodo",
   data() {
     return {
       inputTodo: "",
-      inputTodoTime: ''
+      inputTodoTime: new Date(),
     };
   },
   methods: {
@@ -25,35 +36,41 @@ export default {
       if (!this.inputTodo || !this.inputTodoTime) {
         this.$message({
           showClose: true,
-          message: '请输入内容和选择时间',
-          type: 'warning',
-          offset: 200
+          message: "请输入内容并且选择时间",
+          type: "warning",
+          offset: 200,
         });
-        return false
+        return false;
       }
-      this.$bus.$emit('addTodo', {
+      this.$bus.$emit("addTodo", {
         id: nanoid(),
         name: this.inputTodo,
         time: this.inputTodoTime,
-        done: false
-      })
-      this.inputTodo = ''
-      this.inputTodoTime = ''
-    }
-  }
+        done: false,
+      });
+      this.inputTodo = "";
+      this.inputTodoTime = new Date();
+    },
+  },
 };
 </script>
 
 <style lang="stylus" socped>
-.input_todo_box
-  font-size: 0
-  display: flex
-  align-items: center
-  .label
-    color: #333
-    font-size: 14px
-    margin-right: 20px
-  .input_todo
-    margin-right: 10px
-    flex: 1
+.input_todo_box {
+  font-size: 0;
+  display: flex;
+  align-items: center;
+
+  .label {
+    color: #333;
+    font-size: 14px;
+    margin-right: 10px;
+    margin-left: 20px;
+  }
+
+  .input_todo {
+    margin-right: 10px;
+    flex: 1;
+  }
+}
 </style>

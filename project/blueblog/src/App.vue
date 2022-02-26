@@ -2,7 +2,7 @@
   <div id="app">
     <AllHeader />
     <!-- 缓存Home组件，使其不会被销毁 -->
-    <keep-alive :include="['Home', 'Articles']">
+    <keep-alive :include="['Home', 'Articles', 'Todos']">
       <router-view />
     </keep-alive>
     <AllFooter />
