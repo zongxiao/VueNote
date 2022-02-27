@@ -2,10 +2,10 @@
   <div class="all_state_box">
     <label class="label">
       <el-checkbox class="check_box" v-model="allTotoState"></el-checkbox>
-      <span class="checkd_num">选中：{{ todosFinishedLength }}/</span>
+      <span class="checkd_num">选中：{{ todosCheckedLength }}/</span>
       <span class="total_num">{{ todosLength }}</span>
     </label>
-    <el-button type="success" icon="el-icon-finished"  size="small"  class="finished_btn" v-show="todosFinishedLength" @click="sortByTodosState">I have done</el-button>
+    <el-button type="success" icon="el-icon-finished"  size="small"  class="finished_btn" v-show="todosCheckedLength" @click="sortByTodosState">I have done</el-button>
   </div>
 </template>
 
@@ -17,16 +17,16 @@ export default {
     return {};
   },
   computed: {
-    todosFinishedLength() {
-      return this.todos.filter((element) => element.done).length;
+    todosCheckedLength() {
+      return this.todos.filter((element) => element.checked).length;
     },
     todosLength() {
-      return this.todos.length;
+      return this.todos.filter(element => !element.done).length;
     },
     allTotoState: {
       get() {
         return (
-          this.todosFinishedLength === this.todosLength && this.todosLength > 0
+          this.todosCheckedLength === this.todosLength && this.todosLength > 0
         );
       },
       set(value) {
@@ -36,6 +36,10 @@ export default {
   },
   methods: {
     sortByTodosState() {
+      this.$message({
+        message: '恭喜你，任务完成',
+        type: 'success'
+      });
       this.$bus.$emit('sortByTodosState')
     }
   },

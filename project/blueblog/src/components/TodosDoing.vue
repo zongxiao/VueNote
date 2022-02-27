@@ -2,10 +2,10 @@
   <div class="box">
     <div class="todos">
       <ul>
-        <TodosDoingItem v-for="item in todos" :key="item.id" :todo="item"></TodosDoingItem>
+        <TodosDoingItem v-for="item in todosDoing" :key="item.id" :todo="item"></TodosDoingItem>
       </ul>
-      <el-empty v-if="!todos.length" description="恭喜你，你可以摸鱼了"></el-empty>
-      <TodosDoingState :todos="todos" v-if="todos.length" class="fixed_bottom"></TodosDoingState>
+      <el-empty v-if="!todosDoing.length" description="恭喜你，你可以摸鱼了"></el-empty>
+      <TodosDoingState :todos="todosDoing" v-if="todosDoing.length" class="fixed_bottom"></TodosDoingState>
     </div>
   </div>
 </template>
@@ -15,7 +15,7 @@ import TodosDoingItem from './TodosDoingItem.vue'
 import TodosDoingState from './TodosDoingState.vue'
 export default {
   name: "TodosDoing",
-  props: ['todos'],
+  props: ['todosDoing'],
   data() {
     return {
     };

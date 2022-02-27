@@ -13,7 +13,7 @@
           <AddTodo />
         </div>
         <div class="com_box list_box">
-          <TodosDoing v-show="ifTodosDoing" :todos="todos" />
+          <TodosDoing v-show="ifTodosDoing" :todosDoing="todosDoing" />
           <TodosDone v-show="!ifTodosDoing" :todosDone="todosDone" />
         </div>
       </div>
@@ -50,8 +50,15 @@ export default {
       ],
       ifTodosDoing: true,
       todos: JSON.parse(localStorage.getItem('todos')) || [],
-      todosDone: JSON.parse(localStorage.getItem('todosDone')) || []
     };
+  },
+  computed: {
+    todosDone() {
+      return this.todos.filter(element => element.done).sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime())
+    },
+    todosDoing() {
+      return this.todos.filter(element => !element.done).sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime())
+    }
   },
   methods: {
     showDoing() {
@@ -65,39 +72,61 @@ export default {
     },
     changeTodoState(id) {
       this.todos.forEach(element => {
-        element.id !== id ? '' : element.done = !element.done
+        element.id !== id ? '' : element.checked = !element.checked
       });
     },
     changeAllTodoState(value) {
-      this.todos.forEach(element => element.done = value)
+      this.todos.forEach(element => element.checked = value)
     },
     handleDeleteTodo(id) {
       this.todos = this.todos.filter(element => element.id !== id)
     },
     sortByTodosState() {
-      this.todosDone = [...this.todos.filter(element => element.done === true).reverse(), ...this.todosDone]
-      this.todos = this.todos.filter(element => element.done === false)
+      this.todos.forEach(element => {
+        if(element.checked === true) {
+          element.done = true
+        }
+      })
+    },
+    handleAlterTodoName(id, newTodoName) {
+      this.todos.forEach(element => {
+        if(element.id === id) {
+          element.name = newTodoName
+        }
+      })
+    },
+    undoFinished(id) {
+      this.todos.forEach(element => {
+        if(element.id === id) {
+          element.checked = false
+          element.done = false
+        }
+      })
     }
   },
   mounted() {
+    // 添加一个新的todo项
     this.$bus.$on('addTodo', this.addTodo)
+    // 修改某个待完成的todo项的状态
     this.$bus.$on('changeTodoState', this.changeTodoState)
+    // 修改所有待完成的todo项的状态
     this.$bus.$on('changeAllTodoState', this.changeAllTodoState)
+    // 删除某个todo项
     this.$bus.$on('handleDeleteTodo', this.handleDeleteTodo)
+    // 分类好已完成的事项和未完成的事项
     this.$bus.$on('sortByTodosState', this.sortByTodosState)
+    // 修改todo项的名称
+    this.$bus.$on('handleAlterTodoName', this.handleAlterTodoName)
+    // 撤销todo项已完成的状态
+    this.$bus.$on('undoFinished', this.undoFinished)
   },
   watch:{
     todos: {
+      deep: true, // 深度监视，不加的话只能监督一层
       immediate: true, //初始化时让handler调用一下
       //handler什么时候调用？当todos发生改变时。
       handler(newValue){
         localStorage.setItem('todos', JSON.stringify(newValue))
-      }
-    },
-    todosDone: {
-      immediate: true,
-      handler(newValue){
-        localStorage.setItem('todosDone', JSON.stringify(newValue))
       }
     }
   }

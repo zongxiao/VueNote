@@ -15,6 +15,7 @@
       v-model="inputTodoTime"
       type="date"
       placeholder="选择你期待完成的日期，默认是今天"
+      @change="checkDateIfAfterToday"
     >
     </el-date-picker>
     <el-button plain @click="HandleAddTodo">添加</el-button>
@@ -32,6 +33,20 @@ export default {
     };
   },
   methods: {
+    checkDateIfAfterToday() {
+      const now = new Date();
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+      if (this.inputTodoTime.getTime() - today.getTime() < 0) {
+        this.inputTodoTime = now
+        this.$message({
+          showClose: true,
+          message: "可以给你一张过去的CD，但是不能给你选过去的日期",
+          type: "warning",
+          offset: 200,
+        });
+        return false
+      }
+    },
     HandleAddTodo() {
       if (!this.inputTodo || !this.inputTodoTime) {
         this.$message({
@@ -47,6 +62,7 @@ export default {
         name: this.inputTodo,
         time: this.inputTodoTime,
         done: false,
+        checked: false
       });
       this.inputTodo = "";
       this.inputTodoTime = new Date();
