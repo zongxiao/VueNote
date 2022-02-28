@@ -161,6 +161,7 @@ export default {
     flex: 1
     display: flex
     flex-direction: column
+    min-height: 500px
     .com_box {
       background-color: #fefefe
       padding: 30px
@@ -169,7 +170,7 @@ export default {
       margin-bottom: 10px
     }
     .list_box {
-      padding-bottom: 100px
+      flex: 1
     }
   }
 }
