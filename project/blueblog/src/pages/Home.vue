@@ -1,8 +1,8 @@
 <template>
   <div>
     <Banner :BannerInfo="bannerInfo" />
-    <HomeAbout />
     <HomePicList :MainAttr="projectAttr" :BannerObj="projectsBannerObj" :listArr="projectsArr"></HomePicList>
+    <HomeAbout v-show="true" />
     <HomePicList :MainAttr="blogAttr" :listArr="blogsArr"></HomePicList>
   </div>
 </template>
@@ -36,7 +36,7 @@ export default {
       ],
       projectAttr: {
         title: 'PROJECT',
-        ifBanner: true,
+        ifBanner: false,
         ifSearch: true
       },
       blogAttr: {

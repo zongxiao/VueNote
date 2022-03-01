@@ -5,7 +5,7 @@
       <span class="checkd_num">选中：{{ todosCheckedLength }}/</span>
       <span class="total_num">{{ todosLength }}</span>
     </label>
-    <el-button type="success" icon="el-icon-finished"  size="small"  class="finished_btn" v-show="todosCheckedLength" @click="sortByTodosState">I have done</el-button>
+    <el-button type="primary" icon="el-icon-finished"  size="small"  class="finished_btn" v-show="todosCheckedLength" @click="sortByTodosState">I have done</el-button>
   </div>
 </template>
 

@@ -4,7 +4,7 @@
       <div class="logo">SILENCE37</div>
       <ul class="navigation">
         <li><router-link :to="{ name: 'home' }">HOME</router-link></li>
-        <li><router-link :to="{ name: 'articles' }">BLOGS</router-link></li>
+        <li><router-link :to="{ name: 'blogs' }">BLOGS</router-link></li>
         <li><router-link :to="{ name: 'todos' }">TODOS</router-link></li>
       </ul>
       <div class="search">

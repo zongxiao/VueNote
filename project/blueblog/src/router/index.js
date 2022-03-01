@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import Home from '../pages/Home.vue'
-import Articles from '../pages/Articles.vue'
+import Blogs from '../pages/Blogs.vue'
 import Detail from '../pages/Detail.vue'
 import Todos from '../pages/Todos.vue'
 const routes = [
@@ -25,12 +25,12 @@ const routes = [
     },
   },
   {
-    path: '/articles',
-    component: Articles,
-    name: 'articles',
+    path: '/blogs',
+    component: Blogs,
+    name: 'blogs',
     meta: {
       isAuth: false,
-      title: 'article'
+      title: 'blogs'
     },
     children: [
       {
@@ -43,12 +43,11 @@ const routes = [
         },
         props: true,
         beforeEnter(to, from, next) {
-          console.log('detail---beforeEnter')
-          if (from.name == 'articles') {
+          if (from.name == 'blogs') {
             console.log('独享路由守卫')
             next()
           } else {
-            alert('需要从articles页面进来')
+            alert('需要从blogs页面进来')
           }
         }
       }
@@ -56,7 +55,7 @@ const routes = [
   }
 ]
 const router = new VueRouter({
-  mode: 'history', // history or hash
+  mode: 'hash', // history or hash
   routes
 })
 router.beforeEach((to, from, next) => {

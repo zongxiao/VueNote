@@ -25,7 +25,7 @@
 <script>
 import { nanoid } from "nanoid";
 export default {
-  name: "AddTodo",
+  name: "TodosAdd",
   data() {
     return {
       inputTodo: "",

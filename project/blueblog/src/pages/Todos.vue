@@ -10,7 +10,7 @@
       </div>
       <div class="right_box">
         <div class="com_box edit_box" v-show="ifTodosDoing">
-          <AddTodo />
+          <TodosAdd />
         </div>
         <div class="com_box list_box">
           <TodosDoing v-show="ifTodosDoing" :todosDoing="todosDoing" />
@@ -25,25 +25,20 @@
 import Banner from "../components/Banner.vue";
 import TodosDoing from "../components/TodosDoing.vue";
 import TodosDone from "../components/TodosDone.vue";
-import AddTodo from '../components/AddTodo.vue'
+import TodosAdd from '../components/TodosAdd.vue'
 export default {
   name: "Todos",
   components: {
     Banner,
     TodosDoing,
     TodosDone,
-    AddTodo
+    TodosAdd
   },
   data() {
     return {
       bannerInfo: [
         {
           id: "001",
-          url: "http://www.baidu.com",
-          imgurl: "/img/banner/todos_banner2.jpg",
-        },
-        {
-          id: "002",
           url: "http://www.baidu.com",
           imgurl: "/img/banner/todos_banner1.jpg",
         },
@@ -137,12 +132,10 @@ export default {
 .todos_box {
   margin-top: 40px;
   display: flex;
-
   .left_box {
     margin-right: 10px;
     background-color: #fefefe;
     padding: 30px 40px;
-
     ul {
       li {
         line-height: 1.5
@@ -156,7 +149,6 @@ export default {
       }
     }
   }
-
   .right_box {
     flex: 1
     display: flex
