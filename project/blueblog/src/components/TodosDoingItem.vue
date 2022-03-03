@@ -61,16 +61,16 @@ export default {
 
 <style lang="stylus">
 .todo_item {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #f4f4f4;
   padding: 8px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   &:first-child {
-    border-top: 1px solid #eee;
+    border-top: 1px solid #f4f4f4;
   }
   &:hover {
-    background-color: #eee;
+    background-color: #f4f4f4;
     .operation {
       opacity: 1;
     }

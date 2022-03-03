@@ -31,8 +31,9 @@
 .projects_title
   display flex
   justify-content space-between
+  align-items: center
 .title
-  font-size 36px
+  font-size 28px
   color $color
   font-weight bold
 .search_box
@@ -60,6 +61,9 @@
     &:hover
       box-shadow(0, 15px, 30px, 0.1)
       top -5px
+      .card_cover
+        opacity 1
+        transition(0.2s)
       .card_cover > img
         scale-all(1.1)
       .card_info .name > a
@@ -73,6 +77,7 @@
       overflow hidden
       border-top-left-radius: $border-radius
       border-top-right-radius: $border-radius
+      opacity 0.85
       img
         width 100%
         position absolute

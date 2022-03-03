@@ -5,14 +5,14 @@
       <div class="text">ABOUT ME</div>
     </div>
     <div class="intro_content">
-      <div class="info">
-        <span>Name：罗宗校</span>
-        <span>Job：前端</span>
-        <span>Tel：13267777347</span>
-        <span>Email：905616398@qq.com</span>
-      </div>
       <div class="intro">
-        <p>本人熟练掌握html、css、javascript、es6，vue全家桶和mysql数据库，能独立完成项目的前端部分代码的编写，了解过小程序云开发，能自主开发自己的个人小程序并且上线部署，熟悉域名配置，备案、以及服务器的环境搭建。</p>
+        <p>本人熟练掌握html、css、javascript、es6，vue全家桶和mysql数据库，能独立完成项目的前端部分代码的编写，了解过小程序云开发，能自主开发自己的个人小程序并且上线部署，熟悉域名配置，备案、以及服务器的环境搭建。有需要网页制作以及广告H5制作可以联系我</p>
+      </div>
+      <div class="info">
+        <div>name:<span>zongxiao</span></div>
+        <div>job:<span>developer</span></div>
+        <div>tel:<span>13267777347</span></div>
+        <div>email:<span>905616398@qq.com</span></div>
       </div>
     </div>
   </div>
@@ -30,9 +30,8 @@ export default {
   display: flex
   margin-top: 40px
   .img_title
-    width: 200px
-    height: 200px
-    background-color: #3d7eff
+    padding: 0 24px
+    background-color: $primary-color
     border-top-left-radius: 6px
     border-bottom-left-radius: 6px
     .text
@@ -41,28 +40,31 @@ export default {
       color: #fff
       text-align: center
     .img_box
-      width: 110px
-      height: 110px
+      width: 90px
+      height: 90px
       overflow: hidden
       border-radius: 50%
-      margin: 24px auto 14px auto
+      margin: 32px auto 14px auto
       img
         width: 100%
   .intro_content
     flex: 1
-    background-color: #fff
+    background-color: #ebf2ff
     .intro
       padding: 20px 40px
-      font-size: 18px
+      font-size: 16px
       line-height: 28px
-      color: #3d7eff
+      color: $primary-color
     .info
-      background-color: #ebf2ff
+      background-color: #fff
       padding: 24px 40px
       display: flex
       justify-content: space-between
       align-content: center
+      font-size: 12px
+      color: #999999
       span
-        font-size: 20px
-        color: #3d7eff
+        color: #333333
+        margin-left: 10px
+        font-size: 16px
 </style>

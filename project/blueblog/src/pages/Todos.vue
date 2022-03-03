@@ -129,6 +129,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '../assets/css/mixins.styl'
 .todos_box {
   margin-top: 40px;
   display: flex;
@@ -143,7 +144,7 @@ export default {
         cursor: pointer;
         color: #808080;
         &.active {
-          color: #3d7eff
+          color: $primary-color
           text-decoration: underline
         }
       }

@@ -41,8 +41,8 @@ export default {
   box-sizing: border-box
 .logo
   background #ffffff
-  color #3d7eff
-  font-size 18px
+  color $primary-color
+  font-size 20px
   font-weight bold
 .navigation
   margin-left 180px
@@ -64,7 +64,7 @@ export default {
           height: 4px
           display: block
           position absolute
-          background-color: #3d7eff
+          background-color: $primary-color
           bottom: 0
           left: 50%
           translate-x(-50%)
