@@ -1,11 +1,11 @@
 <template>
-  <div class="all_state_box">
+  <div class="all_state_box" v-show="todosCheckedLength">
     <label class="label">
       <el-checkbox class="check_box" v-model="allTotoState"></el-checkbox>
-      <span class="checkd_num">选中：{{ todosCheckedLength }}/</span>
-      <span class="total_num">{{ todosLength }}</span>
+      <span class="checkd_num">checked：</span>
+      <span class="total_num">{{ todosCheckedLength }}/{{ todosLength }}</span>
     </label>
-    <el-button type="primary" icon="el-icon-finished"  size="small"  class="finished_btn" v-show="todosCheckedLength" @click="sortByTodosState">I have done</el-button>
+    <el-button type="primary" icon="el-icon-check"  size="small"  class="finished_btn" v-show="todosCheckedLength" @click="sortByTodosState">finished</el-button>
   </div>
 </template>
 
@@ -75,11 +75,8 @@ export default {
         border: 1px solid #409EFF;
       }
     }
-    .checkd_num, .total_num {
-      font-size: 14px;
-      &.checked {
-        color: #409EFF;
-      }
+    .total_num {
+      // font-weight: bold
     }
   }
   .finished_btn {

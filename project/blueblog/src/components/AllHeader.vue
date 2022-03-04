@@ -1,11 +1,11 @@
 <template>
   <div class="header">
     <div class="header_content w1200">
-      <div class="logo">SILENCE37</div>
+      <div class="logo"><span>Zongxiao's</span>blogs</div>
       <ul class="navigation">
-        <li><router-link :to="{ name: 'home' }">HOME</router-link></li>
-        <li><router-link :to="{ name: 'blogs' }">BLOGS</router-link></li>
-        <li><router-link :to="{ name: 'todos' }">TODOS</router-link></li>
+        <li><router-link :to="{ name: 'home' }">Home</router-link></li>
+        <li><router-link :to="{ name: 'blogs' }">Blogs</router-link></li>
+        <li><router-link :to="{ name: 'todos' }">Todos</router-link></li>
       </ul>
       <div class="search">
         <input type="text" v-model="topSearch" placeholder="今晚吃啥呢？"><span @click="handleSearch" class="el-icon-search icon_search"></span>
@@ -41,9 +41,13 @@ export default {
   box-sizing: border-box
 .logo
   background #ffffff
-  color $primary-color
-  font-size 20px
-  font-weight bold
+  color #333333
+  font-size 26px
+  font-weight: bold
+  span
+    font-size: 14px
+    font-weight: normal
+    margin-right: 6px
 .navigation
   margin-left 180px
   li

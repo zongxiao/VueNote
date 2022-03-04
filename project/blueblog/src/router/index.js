@@ -30,7 +30,7 @@ const routes = [
     name: 'blogs',
     meta: {
       isAuth: false,
-      title: 'blogs'
+      title: 'Blogs'
     },
     children: [
       {

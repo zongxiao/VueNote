@@ -97,6 +97,9 @@ export default {
           element.done = false
         }
       })
+    },
+    clearAllTodoFinished() {
+      this.todos = this.todos.filter(element => element.done !== true)
     }
   },
   mounted() {
@@ -114,6 +117,8 @@ export default {
     this.$bus.$on('handleAlterTodoName', this.handleAlterTodoName)
     // 撤销todo项已完成的状态
     this.$bus.$on('undoFinished', this.undoFinished)
+    // 彻底清空所有已完成的todo项
+    this.$bus.$on('clearAllTodoFinished', this.clearAllTodoFinished)
   },
   watch:{
     todos: {

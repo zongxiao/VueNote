@@ -22,8 +22,8 @@ const state = {
   },
   projects: [
     {
-      name: "project1",
-      describe: 'this project is about...this project is about..this project is about',
+      name: "vue2.0博客",
+      describe: '该项目是基于vue2全家桶进行制作的纯前端作品，无数据接口，主要使用了vuex进行数据的状态管理，使用vue router实现路由切换',
       cover: "/img/project/001.jpg",
       url: "https://github.com/zongxiao/countdown-days",
       doneTime: '2021-12-12',

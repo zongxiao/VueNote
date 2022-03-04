@@ -2,23 +2,23 @@
   <div class="input_todo_box" @keyup.enter="HandleAddTodo">
     <el-input
       class="input_todo"
-      placeholder="这里输入你要做的事情"
+      placeholder="write your task"
       clearable
       v-model="inputTodo"
     >
       <i slot="prefix" class="el-input__icon el-icon-edit"></i>
     </el-input>
 
-    <div class="label">完成日期</div>
+    <div class="label">deadline</div>
     <el-date-picker
       class="input_todo"
       v-model="inputTodoTime"
       type="date"
-      placeholder="选择你期待完成的日期，默认是今天"
+      placeholder="select the date you finish it"
       @change="checkDateIfAfterToday"
     >
     </el-date-picker>
-    <el-button plain @click="HandleAddTodo">添加</el-button>
+    <el-button plain @click="HandleAddTodo">add</el-button>
   </div>
 </template>
 

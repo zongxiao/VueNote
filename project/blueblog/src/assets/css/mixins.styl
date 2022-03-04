@@ -35,3 +35,11 @@ scale-all(x, y = x)
 // transition(0.5s)
 transition(time = 0.35s)
   vender('transition', (all time))
+
+// overflow ellipsis
+ellipsis(n = 2)
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: n;  /*要显示的行数*/
+  -webkit-box-orient: vertical;

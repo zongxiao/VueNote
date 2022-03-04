@@ -4,13 +4,14 @@
       <el-checkbox class="check_box" :value="todo.checked" @change="handleTodoState(todo.id)"></el-checkbox>
       <span class="name" :class="{ checked: todo.checked }">{{ todo.name }}</span>
       <span class="time">({{ todo.time | timeFormat }})</span>
+      <i v-show="ifPast" class="if_past">已过期</i>
     </label>
-    <div class="edit_box" v-show="todo.isEditing">
+    <div v-show="todo.isEditing" class="edit_box">
       <el-input class="edit_input" size="mini" v-model="todo.name" placeholder="请输入待办事项" ref="editInput" title="失去焦点时保存" @blur="handleAlterTodoName(todo, $event)"><i slot="prefix" class="el-input__icon el-icon-edit"></i></el-input>
     </div>
     <div class="operation">
-      <el-button v-show="!todo.isEditing" type="primary" plain size="mini" icon="el-icon-edit" @click="handleEditState(todo)">编辑</el-button>
-      <el-button type="danger" plain size="mini" icon="el-icon-delete" @click="handleDeleteTodo(todo.id)">删除</el-button>
+      <el-button v-show="!todo.isEditing" type="primary" plain size="mini" icon="el-icon-edit" @click="handleEditState(todo)">edit</el-button>
+      <el-button type="danger" plain size="mini" icon="el-icon-delete" @click="handleDeleteTodo(todo.id)">delete</el-button>
     </div>
   </li>
 </template>
@@ -56,6 +57,11 @@ export default {
       todoObj.isEditing = false
     }
   },
+  computed: {
+    ifPast() {
+      return this.todo.time
+    }
+  }
 };
 </script>
 
@@ -89,6 +95,13 @@ export default {
       font-size: 12px;
       color: #aaa;
       margin-left: 4px;
+      margin-left: 20px
+    }
+    .if_past {
+      font-size: 12px
+      font-weight: bold
+      color: rgba(0, 0, 0, 0.2)
+      margin-left: 20px
     }
     .el-checkbox__inner {
       border: 1px solid #999;
