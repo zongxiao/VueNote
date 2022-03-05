@@ -52,7 +52,7 @@ export default {
   display: flex
   height: 80px
   align-items: center
-  justify-content: space-between
+  justify-content: flex-start
   border: 1px solid rgba(0, 0, 0, 0)
   border-top: 1px solid rgba(0, 0, 0, 0)
   .label {
@@ -80,7 +80,7 @@ export default {
     }
   }
   .finished_btn {
-    margin-left: 20px
+    margin-left: 40px
   }
 }
 </style>

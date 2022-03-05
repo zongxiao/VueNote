@@ -65,23 +65,6 @@ export default {
   }
 
   label {
-    cursor: pointer;
-
-    .el-checkbox__inner {
-      border: 1px solid #999;
-    }
-
-    .is-focus {
-      .el-checkbox__inner {
-        border: 1px solid #999;
-      }
-    }
-
-    .is-checked {
-      .el-checkbox__inner {
-        border: 1px solid #409EFF;
-      }
-    }
   }
 
   .name {
@@ -89,10 +72,6 @@ export default {
     font-size: 14px;
     color: #999;
     text-decoration: line-through
-
-    &.checked {
-      // color: #409EFF;
-    }
   }
 
   .time {
@@ -100,7 +79,6 @@ export default {
     color: #aaa;
     margin-left: 4px;
   }
-
   .operation {
     opacity: 0;
   }

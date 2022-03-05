@@ -1,9 +1,5 @@
 <template>
   <div class="index_about w1200">
-    <div class="img_title">
-      <div class="img_box"><img src="../assets/img/home/about_head.png" alt=""></div>
-      <div class="text">ABOUT ME</div>
-    </div>
     <div class="intro_content">
       <div class="intro">
         <p>熟练掌握html、css、javascript、es6，vue全家桶和mysql数据库，能独立完成项目的前端部分代码的编写，了解过小程序云开发，能自主开发自己的个人小程序并且上线部署，熟悉域名配置，备案、以及服务器的环境搭建，提供包含制作并上线维护等服务，有需要网页制作以及广告H5制作可以通过下方联系方式联系我进行合作。</p>
@@ -14,6 +10,10 @@
         <div>微信:<span>13267777347</span></div>
         <div>邮箱:<span>905616398@qq.com</span></div>
       </div>
+    </div>
+    <div class="img_title">
+      <div class="img_box"><img src="../assets/img/home/about_head.png" alt=""></div>
+      <div class="text">ABOUT ME</div>
     </div>
   </div>
 </template>
@@ -32,16 +32,16 @@ export default {
   .img_title
     padding: 0 24px
     background-color: $primary-color
-    border-top-left-radius: 6px
-    border-bottom-left-radius: 6px
+    border-top-right-radius: 6px
+    border-bottom-right-radius: 6px
     .text
-      font-size: 28px
+      font-size: 22px
       font-weight: bold
       color: #fff
       text-align: center
     .img_box
-      width: 90px
-      height: 90px
+      width: 80px
+      height: 80px
       overflow: hidden
       border-radius: 50%
       margin: 32px auto 14px auto

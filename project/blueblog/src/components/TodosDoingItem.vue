@@ -59,13 +59,14 @@ export default {
   },
   computed: {
     ifPast() {
-      return this.todo.time
+      console.log(new Date().getDate(), new Date(this.todo.time).getDate())
+      return new Date().getDate() - new Date(this.todo.time).getDate() > 0
     }
   }
 };
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .todo_item {
   border-bottom: 1px solid #f4f4f4;
   padding: 8px 20px;
@@ -87,9 +88,6 @@ export default {
       margin-left: 5px;
       font-size: 14px;
       color: #666;
-      &.checked {
-        // color: #409EFF;
-      }
     }
     .time {
       font-size: 12px;
