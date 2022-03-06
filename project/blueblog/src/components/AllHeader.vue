@@ -42,7 +42,7 @@ export default {
 .logo
   background #ffffff
   color #333333
-  font-size 26px
+  font-size 30px
   font-weight: bold
   span
     font-size: 14px
@@ -61,7 +61,7 @@ export default {
       font-size 16px
       position relative
       &.router-link-exact-active
-        color #333333
+        color $primary-color
       &.router-link-exact-active:after
           content: ''
           width: 80%

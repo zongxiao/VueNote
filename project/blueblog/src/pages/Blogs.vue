@@ -1,48 +1,38 @@
 <template>
   <div>
     <Banner :BannerInfo="bannerInfo" />
-    <div class="w1200">
-      <ul>
-        <li v-for="item in articleList" :key="item.id">
-          <router-link :to="{ name: 'detail', params: { id: item.id } }">
-            {{ item.title }}</router-link
-          >
-        </li>
-      </ul>
+    <div class="blogs_box w1200">
+      <BlogList />
+      <BlogInfo />
     </div>
-    <div>
-      <router-view></router-view>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Banner from '../components/Banner.vue'
+import BlogList from '../components/BlogList.vue'
+import BlogInfo from '../components/BlogInfo.vue'
 export default {
   name: "Blogs",
   components: {
-    Banner
+    Banner,
+    BlogList,
+    BlogInfo
   },
   data() {
     return {
       bannerInfo: [
-        {
-          id: "001",
-          url: "http://www.baidu.com",
-          imgurl: "/img/banner/todos_banner2.jpg",
-        },
+        { id: "001", url: "http://www.baidu.com", imgurl: "/img/banner/todos_banner2.jpg", }
       ],
-      articleList: [
-        { id: "001", title: "文章标题1" },
-        { id: "002", title: "文章标题2" },
-        { id: "003", title: "文章标题3" },
-        { id: "004", title: "文章标题4" },
-        { id: "005", title: "文章标题5" },
-      ],
-    };
+    }
   },
 };
 </script>
 
-<style>
+<style lang="stylus" scoped>
+@import '../assets/css/mixins.styl'
+.blogs_box
+  margin-top 40px
+  display: flex
 </style>

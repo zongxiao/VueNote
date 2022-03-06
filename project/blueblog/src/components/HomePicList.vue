@@ -14,6 +14,7 @@
         <el-select
           v-model="keyword"
           clearable
+          size="small"
           placeholder="筛选"
           @change="handleFilter"
         >

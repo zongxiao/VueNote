@@ -49,4 +49,6 @@ export default {
       width: 15px
       height: 15px
       margin: 0 7.5px
+    .swiper-pagination-bullet-active
+      background-color: $primary-color
 </style>

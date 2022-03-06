@@ -59,7 +59,6 @@ export default {
   },
   computed: {
     ifPast() {
-      console.log(new Date().getDate(), new Date(this.todo.time).getDate())
       return new Date().getDate() - new Date(this.todo.time).getDate() > 0
     }
   }

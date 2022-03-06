@@ -32,8 +32,6 @@ export default {
   .img_title
     padding: 0 24px
     background-color: $primary-color
-    border-top-right-radius: 6px
-    border-bottom-right-radius: 6px
     .text
       font-size: 22px
       font-weight: bold

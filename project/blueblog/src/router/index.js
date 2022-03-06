@@ -43,7 +43,7 @@ const routes = [
         },
         props: true,
         beforeEnter(to, from, next) {
-          if (from.name == 'blogs') {
+          if (from.name == 'blogs' || from.name == 'home') {
             console.log('独享路由守卫')
             next()
           } else {
@@ -55,7 +55,7 @@ const routes = [
   }
 ]
 const router = new VueRouter({
-  mode: 'hash', // history or hash
+  mode: 'history', // history or hash
   routes
 })
 router.beforeEach((to, from, next) => {
