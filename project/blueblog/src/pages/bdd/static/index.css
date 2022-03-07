@@ -16,8 +16,8 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -240px;
-  margin-top: -240px;
+  margin-left: -165px;
+  margin-top: -187.5px;
 }
 .mbody {
   width: 330px;
@@ -29,6 +29,25 @@ body {
   background: url(../static/logo.png) bottom center no-repeat #fff;
   background-size: 64px;
   background-position: 48% 88%;
+  z-index: 2;
+}
+.mbody #pic {
+  width: 200px;
+  margin: 80px auto;
+  display: none;
+}
+.mbody #pic span {
+  font-size: 16px;
+  color: #999999;
+  line-height: 24px;
+  display: block;
+  margin-top: 12px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.mbody #pic img {
+  width: 100%;
 }
 .face1 {
   width: 260px;
@@ -207,10 +226,74 @@ body {
   top: 72px;
   z-index: 0;
 }
+.right_leg .love {
+  width: 20px;
+  height: 20px;
+  background-color: #bc242c;
+  position: absolute;
+  right: 26px;
+  top: 25px;
+  transform: rotate(44deg);
+}
+.right_leg .love:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: block;
+  background-color: #bc242c;
+  position: absolute;
+  right: 0px;
+  top: -9px;
+}
+.right_leg .love:after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: block;
+  background-color: #bc242c;
+  position: absolute;
+  left: -9px;
+  top: 0px;
+}
 .left_foot {
-  width: 90px;
-  height: 120px;
+  width: 71px;
+  height: 100px;
   background-color: #333333;
   position: absolute;
+  border-radius: 0% 0% 0% 39% / 0% 0% 0% 29%;
+  bottom: -69px;
+  left: 74px;
+}
+.left_foot:after {
+  content: '';
+  width: 16px;
+  height: 22px;
+  display: block;
+  background-color: #333;
+  position: absolute;
+  right: -5px;
+  bottom: 0px;
+  border-radius: 50%;
+}
+.right_foot {
+  width: 71px;
+  height: 100px;
+  background-color: #333333;
+  position: absolute;
+  border-radius: 0% 0% 39% 0% / 0% 0% 29% 0%;
+  bottom: -69px;
+  right: 74px;
+}
+.right_foot:after {
+  content: '';
+  width: 12px;
+  height: 22px;
+  display: block;
+  background-color: #333;
+  position: absolute;
+  left: -5px;
+  bottom: 0px;
   border-radius: 50%;
 }
