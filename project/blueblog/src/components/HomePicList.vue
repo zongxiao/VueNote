@@ -1,13 +1,5 @@
 <template>
   <div class="index_projects w1200">
-    <div class="projects_banner" v-if="MainAttr.ifBanner">
-      <a class="main" :href="BannerObj.mainBanner.url">
-        <img :src="BannerObj.mainBanner.cover" />
-      </a>
-      <a class="sub" :href="BannerObj.subBanner.url">
-        <img :src="BannerObj.subBanner.cover" />
-      </a>
-    </div>
     <div class="projects_title">
       <h4 class="title">{{ MainAttr.title }}</h4>
       <div class="search_box" v-if="MainAttr.ifSearch">
@@ -52,7 +44,7 @@ export default {
       keyword: "",
     };
   },
-  props: ["MainAttr", "BannerObj", "listArr"],
+  props: ["MainAttr", "listArr"],
   mounted() {
     this.list = this.listArr;
     this.types = this.uniqueByObjectAttrOfArray(this.listArr, "type");

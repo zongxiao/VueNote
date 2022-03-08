@@ -3,13 +3,13 @@
     <Banner :BannerInfo="bannerInfo" />
     <div class="blogs_box w1200">
       <BlogList />
-      <BlogInfo />
+      <BlogInfo :goodBlogs="goodBlogs" />
     </div>
-    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import Banner from '../components/Banner.vue'
 import BlogList from '../components/BlogList.vue'
 import BlogInfo from '../components/BlogInfo.vue'
@@ -27,6 +27,9 @@ export default {
       ],
     }
   },
+  computed: {
+    ...mapGetters(['goodBlogs'])
+  }
 };
 </script>
 

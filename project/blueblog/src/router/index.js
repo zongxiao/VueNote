@@ -16,6 +16,25 @@ const routes = [
     }
   },
   {
+    path: '/blogs',
+    component: Blogs,
+    name: 'blogs',
+    meta: {
+      isAuth: false,
+      title: 'Blogs'
+    }
+  },
+  {
+    path: '/detail/:id',
+    component: Detail,
+    name: 'detail',
+    meta: {
+      isAuth: false,
+      title: 'detail'
+    },
+    props: true
+  },
+  {
     path: '/todos',
     component: Todos,
     name: 'todos',
@@ -23,35 +42,6 @@ const routes = [
       isAuth: false,
       title: 'Todos'
     },
-  },
-  {
-    path: '/blogs',
-    component: Blogs,
-    name: 'blogs',
-    meta: {
-      isAuth: false,
-      title: 'Blogs'
-    },
-    children: [
-      {
-        path: 'detail/:id',
-        component: Detail,
-        name: 'detail',
-        meta: {
-          isAuth: false,
-          title: 'detail'
-        },
-        props: true,
-        beforeEnter(to, from, next) {
-          if (from.name == 'blogs' || from.name == 'home') {
-            console.log('独享路由守卫')
-            next()
-          } else {
-            alert('需要从blogs页面进来')
-          }
-        }
-      }
-    ]
   }
 ]
 const router = new VueRouter({
