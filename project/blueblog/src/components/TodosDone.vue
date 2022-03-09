@@ -55,5 +55,5 @@ export default {
     border-left: 1px solid #eee
     border-right: 1px solid #eee
   .delete_btn
-    margin-top: 20px
+    margin: 20px 0 0 21px
 </style>
