@@ -41,7 +41,7 @@ export default {
       ],
       projectAttr: {
         title: 'PROJECT',
-        ifSearch: false
+        ifSearch: true
       }
     }
   },
