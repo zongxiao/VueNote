@@ -25,14 +25,14 @@
 import Banner from "../components/Banner.vue";
 import TodosDoing from "../components/TodosDoing.vue";
 import TodosDone from "../components/TodosDone.vue";
-import TodosAdd from '../components/TodosAdd.vue'
+import TodosAdd from "../components/TodosAdd.vue";
 export default {
   name: "Todos",
   components: {
     Banner,
     TodosDoing,
     TodosDone,
-    TodosAdd
+    TodosAdd,
   },
   data() {
     return {
@@ -44,16 +44,24 @@ export default {
         },
       ],
       ifTodosDoing: true,
-      todos: JSON.parse(localStorage.getItem('todos')) || [],
+      todos: JSON.parse(localStorage.getItem("todos")) || [],
     };
   },
   computed: {
     todosDone() {
-      return this.todos.filter(element => element.done).sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime())
+      return this.todos
+        .filter((element) => element.done)
+        .sort(
+          (a, b) => new Date(b.time).getTime() - new Date(a.time).getTime()
+        );
     },
     todosDoing() {
-      return this.todos.filter(element => !element.done).sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime())
-    }
+      return this.todos
+        .filter((element) => !element.done)
+        .sort(
+          (a, b) => new Date(a.time).getTime() - new Date(b.time).getTime()
+        );
+    },
   },
   methods: {
     showDoing() {
@@ -63,112 +71,120 @@ export default {
       this.ifTodosDoing = false;
     },
     addTodo(todoObj) {
-      this.todos.push(todoObj)
+      this.todos.push(todoObj);
     },
     changeTodoState(id) {
-      this.todos.forEach(element => {
-        element.id !== id ? '' : element.checked = !element.checked
+      this.todos.forEach((element) => {
+        element.id !== id ? "" : (element.checked = !element.checked);
       });
     },
     changeAllTodoState(value) {
-      this.todos.forEach(element => element.checked = value)
+      this.todos.forEach((element) => (element.checked = value));
     },
     handleDeleteTodo(id) {
-      this.todos = this.todos.filter(element => element.id !== id)
+      this.todos = this.todos.filter((element) => element.id !== id);
     },
     sortByTodosState() {
-      this.todos.forEach(element => {
-        if(element.checked === true) {
-          element.done = true
+      this.todos.forEach((element) => {
+        if (element.checked === true) {
+          element.done = true;
         }
-      })
+      });
     },
     handleAlterTodoName(id, newTodoName) {
-      this.todos.forEach(element => {
-        if(element.id === id) {
-          element.name = newTodoName
+      this.todos.forEach((element) => {
+        if (element.id === id) {
+          element.name = newTodoName;
         }
-      })
+      });
     },
     undoFinished(id) {
-      this.todos.forEach(element => {
-        if(element.id === id) {
-          element.checked = false
-          element.done = false
+      this.todos.forEach((element) => {
+        if (element.id === id) {
+          element.checked = false;
+          element.done = false;
         }
-      })
+      });
     },
     clearAllTodoFinished() {
-      this.todos = this.todos.filter(element => element.done !== true)
-    }
+      this.todos = this.todos.filter((element) => element.done !== true);
+    },
   },
   mounted() {
     // 添加一个新的todo项
-    this.$bus.$on('addTodo', this.addTodo)
+    this.$bus.$on("addTodo", this.addTodo);
     // 修改某个待完成的todo项的状态
-    this.$bus.$on('changeTodoState', this.changeTodoState)
+    this.$bus.$on("changeTodoState", this.changeTodoState);
     // 修改所有待完成的todo项的状态
-    this.$bus.$on('changeAllTodoState', this.changeAllTodoState)
+    this.$bus.$on("changeAllTodoState", this.changeAllTodoState);
     // 删除某个todo项
-    this.$bus.$on('handleDeleteTodo', this.handleDeleteTodo)
+    this.$bus.$on("handleDeleteTodo", this.handleDeleteTodo);
     // 分类好已完成的事项和未完成的事项
-    this.$bus.$on('sortByTodosState', this.sortByTodosState)
+    this.$bus.$on("sortByTodosState", this.sortByTodosState);
     // 修改todo项的名称
-    this.$bus.$on('handleAlterTodoName', this.handleAlterTodoName)
+    this.$bus.$on("handleAlterTodoName", this.handleAlterTodoName);
     // 撤销todo项已完成的状态
-    this.$bus.$on('undoFinished', this.undoFinished)
+    this.$bus.$on("undoFinished", this.undoFinished);
     // 彻底清空所有已完成的todo项
-    this.$bus.$on('clearAllTodoFinished', this.clearAllTodoFinished)
+    this.$bus.$on("clearAllTodoFinished", this.clearAllTodoFinished);
   },
-  watch:{
+  watch: {
     todos: {
       deep: true, // 深度监视，不加的话只能监督一层
       immediate: true, //初始化时让handler调用一下
       //handler什么时候调用？当todos发生改变时。
-      handler(newValue){
-        localStorage.setItem('todos', JSON.stringify(newValue))
-      }
-    }
-  }
+      handler(newValue) {
+        localStorage.setItem("todos", JSON.stringify(newValue));
+      },
+    },
+  },
 };
 </script>
 
 <style lang="stylus" scoped>
-@import '../assets/css/mixins.styl'
+@import '../assets/css/mixins.styl';
+
 .todos_box {
   margin-top: 40px;
   display: flex;
+
   .left_box {
     margin-right: 10px;
     background-color: #fefefe;
     padding: 30px 40px;
+
     ul {
       li {
-        line-height: 1.5
+        line-height: 1.5;
         margin-bottom: 10px;
         cursor: pointer;
         color: #808080;
+
         &.active {
-          color: $primary-color
-          text-decoration: underline
+          color: $primary-color;
+          text-decoration: underline;
         }
       }
     }
   }
+
   .right_box {
-    flex: 1
-    display: flex
-    flex-direction: column
-    min-height: 500px
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+
     .com_box {
-      background-color: #fefefe
-      padding: 30px
+      background-color: #fefefe;
+      padding: 30px;
     }
+
     .edit_box {
-      margin-bottom: 10px
+      margin-bottom: 10px;
     }
+
     .list_box {
-      flex: 1
+      flex: 1;
     }
   }
 }
