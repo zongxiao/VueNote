@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://210.0.158.139:27017/zongxiaosblog')
+mongoose.connect('mongodb://127.0.0.1:27017/zongxiaosblog')
 const MonBlog = mongoose.model('monblog', {
   title: {
     type: String,

@@ -28,7 +28,6 @@ router.post('/blog/new', (req, res) => {
 })
 
 router.get('/blog', function (req, res) {
-  console.log('get')
   MonBlog.find((err, data) => {
     if (err) {
       res.send(err)
