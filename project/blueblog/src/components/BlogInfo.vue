@@ -11,7 +11,12 @@
     <div class="module_box">
       <h4>博主推荐</h4>
       <div class="list_box">
-        <router-link class="item" v-for="(blog, index) in goodBlogs" :key="blog.id" :to="{ name: 'detail', params: { id: blog.id }}">
+        <router-link
+          class="item"
+          v-for="(blog, index) in goodBlogs"
+          :key="blog.id"
+          :to="{ name: 'detail', params: { id: blog.id } }"
+        >
           <span>{{ index + 1 }}.</span>{{ blog.title }}
         </router-link>
       </div>
@@ -24,18 +29,16 @@
     </div>
     <div class="module_box">
       <h4>友情链接</h4>
-      <div class="list_box">
-        ...等待完善
-      </div>
+      <div class="list_box">...等待完善</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'BlogInfo',
-  props: ['goodBlogs'],
-}
+  name: "BlogInfo",
+  props: ["goodBlogs"],
+};
 </script>
 
 <style lang="stylus" scoped>

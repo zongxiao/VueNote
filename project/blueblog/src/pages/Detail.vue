@@ -1,16 +1,15 @@
 <template>
   <div class="w1200">
-    {{id}}
+    {{ id }}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Detail',
-  props: ['id']
-}
+  name: "Detail",
+  props: ["id"],
+};
 </script>
 
 <style>
-
 </style>

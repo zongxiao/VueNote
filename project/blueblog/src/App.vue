@@ -24,9 +24,8 @@ export default {
 
 <style lang="stylus">
 @import './assets/css/mixins.styl'
-.w1200 {
-  max-width: 1226px;
-  width: 100%;
-  margin: 0 auto;
-}
+.w1200
+  max-width: 1226px
+  width: 100%
+  margin: 0 auto
 </style>

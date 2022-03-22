@@ -1,6 +1,9 @@
 <template>
-  <router-link class="blog_li" :to="{ name: 'detail', params: { id: this.blog.id } }">
-    <div class="figture"><img :src="blog.cover" alt=""></div>
+  <router-link
+    class="blog_li"
+    :to="{ name: 'detail', params: { id: this.blog.id } }"
+  >
+    <div class="figture"><img :src="blog.cover" alt="" /></div>
     <div class="text_box">
       <div class="main_info">
         <h4 class="title">{{ blog.title }}</h4>
@@ -15,44 +18,9 @@
 
 <script>
 export default {
-  name: 'BlogListItem',
-  props: ['blog']
-}
+  name: "BlogListItem",
+  props: ["blog"],
+};
 </script>
 
-<style lang="stylus" scoped>
-@import '../assets/css/mixins.styl'
-.blog_li
-  padding: 16px
-  background-color: #fff
-  display: flex
-  font-size: 0
-  margin: 0 0 2% 0
-  .figture
-    width: 220px
-    margin-right: 10px
-    img
-      width: 100%
-  .text_box
-    flex: 1
-    padding: 14px
-    font-size: 14px
-    display: flex
-    flex-direction: column
-    justify-content: space-around
-    .main_info
-      .title
-        font-size: 18px
-        color: #333
-        line-height: 24px
-        ellipsis(1)
-      .sub_title
-        font-size: 14px
-        color: #888
-        line-height: 24px
-        margin-top: 8px
-        ellipsis(2)
-    .others_info
-      font-size: 14px
-      color: #999
-</style>
+<style lang="stylus" src="../assets/css/components/blog-list-item.styl"></style>

@@ -142,50 +142,33 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import '../assets/css/mixins.styl';
-
-.todos_box {
-  margin-top: 40px;
-  display: flex;
-
-  .left_box {
-    margin-right: 10px;
-    background-color: #fefefe;
-    padding: 30px 40px;
-
-    ul {
-      li {
-        line-height: 1.5;
-        margin-bottom: 10px;
-        cursor: pointer;
-        color: #808080;
-
-        &.active {
-          color: $primary-color;
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-  .right_box {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-height: 500px;
-
-    .com_box {
-      background-color: #fefefe;
-      padding: 30px;
-    }
-
-    .edit_box {
-      margin-bottom: 10px;
-    }
-
-    .list_box {
-      flex: 1;
-    }
-  }
-}
+@import '../assets/css/mixins.styl'
+.todos_box
+  margin-top: 40px
+  display: flex
+  .left_box
+    margin-right: 10px
+    background-color: #fefefe
+    padding: 30px 40px
+    ul
+      li
+        line-height: 1.5
+        margin-bottom: 10px
+        cursor: pointer
+        color: #808080
+        &.active
+          color: $primary-color
+          text-decoration: underline
+  .right_box
+    flex: 1
+    display: flex
+    flex-direction: column
+    min-height: 500px
+    .com_box
+      background-color: #fefefe
+      padding: 30px
+    .edit_box
+      margin-bottom: 10px
+    .list_box
+      flex: 1
 </style>

@@ -2,32 +2,40 @@
   <div class="box">
     <div class="todos">
       <ul>
-        <TodosDoingItem v-for="item in todosDoing" :key="item.id" :todo="item"></TodosDoingItem>
+        <TodosDoingItem
+          v-for="item in todosDoing"
+          :key="item.id"
+          :todo="item"
+        ></TodosDoingItem>
       </ul>
-      <el-empty v-if="!todosDoing.length" description="恭喜你，你可以摸鱼了"></el-empty>
-      <TodosDoingState :todos="todosDoing" v-if="todosDoing.length" class="fixed_bottom"></TodosDoingState>
+      <el-empty
+        v-if="!todosDoing.length"
+        description="恭喜你，你可以摸鱼了"
+      ></el-empty>
+      <TodosDoingState
+        :todos="todosDoing"
+        v-if="todosDoing.length"
+        class="fixed_bottom"
+      ></TodosDoingState>
     </div>
   </div>
 </template>
 
 <script>
-import TodosDoingItem from './TodosDoingItem.vue'
-import TodosDoingState from './TodosDoingState.vue'
+import TodosDoingItem from "./TodosDoingItem.vue";
+import TodosDoingState from "./TodosDoingState.vue";
 export default {
   name: "TodosDoing",
-  props: ['todosDoing'],
+  props: ["todosDoing"],
   data() {
-    return {
-    };
+    return {};
   },
   components: {
     TodosDoingItem,
-    TodosDoingState
+    TodosDoingState,
   },
-  mounted() {
-  },
-  methods: {
-  }
+  mounted() {},
+  methods: {},
 };
 </script>
 

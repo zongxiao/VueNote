@@ -35,16 +35,16 @@ export default {
   methods: {
     checkDateIfAfterToday() {
       const now = new Date();
-      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
       if (this.inputTodoTime.getTime() - today.getTime() < 0) {
-        this.inputTodoTime = now
+        this.inputTodoTime = now;
         this.$message({
           showClose: true,
           message: "可以给你一张过去的CD，但是不能给你选过去的日期",
           type: "warning",
           offset: 200,
         });
-        return false
+        return false;
       }
     },
     HandleAddTodo() {
@@ -62,7 +62,7 @@ export default {
         name: this.inputTodo,
         time: this.inputTodoTime,
         done: false,
-        checked: false
+        checked: false,
       });
       this.inputTodo = "";
       this.inputTodoTime = new Date();
@@ -72,21 +72,16 @@ export default {
 </script>
 
 <style lang="stylus" socped>
-.input_todo_box {
-  font-size: 0;
-  display: flex;
-  align-items: center;
-
-  .label {
-    color: #333;
-    font-size: 14px;
-    margin-right: 10px;
-    margin-left: 20px;
-  }
-
-  .input_todo {
-    margin-right: 10px;
-    flex: 1;
-  }
-}
+.input_todo_box
+  font-size: 0
+  display: flex
+  align-items: center
+  .label
+    color: #333
+    font-size: 14px
+    margin-right: 10px
+    margin-left: 20px
+  .input_todo
+    margin-right: 10px
+    flex: 1
 </style>

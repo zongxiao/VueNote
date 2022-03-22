@@ -5,17 +5,17 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import BlogListItem from '../components/BlogListItem.vue'
+import { mapState } from "vuex";
+import BlogListItem from "../components/BlogListItem.vue";
 export default {
-  name: 'BlogList',
+  name: "BlogList",
   components: {
-    BlogListItem
+    BlogListItem,
   },
   computed: {
-    ...mapState({blogList: 'blogs'})
-  }
-}
+    ...mapState({ blogList: "blogs" }),
+  },
+};
 </script>
 
 <style lang="stylus" scoped>

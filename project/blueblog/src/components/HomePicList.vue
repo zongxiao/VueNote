@@ -34,9 +34,9 @@
 </template>
 
 <script>
-import("../assets/css/components/home_pic_list.styl");
+import("../assets/css/components/home-piclist.styl");
 export default {
-  name: "HomePicList",
+  name: "HomePiclist",
   data() {
     return {
       list: [],

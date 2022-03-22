@@ -31,39 +31,38 @@ export default {
 
 <style lang="stylus">
 .footer
-  background #373737
-  margin-top 80px
+  background: #373737
+  margin-top: 80px
   .footer_content
-    padding 50px 0
+    padding: 50px 0
     .contact
       .tit
-        font-size 28px
+        font-size: 28px
         font-weight: bold
-        color #eee
+        color: #eee
       .contact_info
-        display flex
-        margin-bottom 15px
-        padding-bottom 15px
-        border-bottom 1px solid #555
-        margin-top 30px
+        display: flex
+        margin-bottom: 15px
+        padding-bottom: 15px
+        border-bottom: 1px solid #555
+        margin-top: 30px
         & > li
-          font-size 14px
-          color #aaa
-          line-height 1.4
-          margin-right 60px
+          font-size: 14px
+          color: #aaa
+          line-height: 1.4
+          margin-right: 60px
         for row in 1 2 3 4 5
           li:nth-child({row})
-            opacity 1 + (row/20)
-
+            opacity: 1 + (row / 20)
       .copyright
         & > p
-          color #aaa
-          font-size 14px
-          line-height 1.4
-          margin-top 15px
+          color: #aaa
+          font-size: 14px
+          line-height: 1.4
+          margin-top: 15px
           a
-            color #aaa
-            margin-left 20px
+            color: #aaa
+            margin-left: 20px
             &:hover
-              color #eee
+              color: #eee
 </style>
