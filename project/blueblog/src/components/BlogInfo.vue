@@ -41,31 +41,4 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
-@import '../assets/css/mixins.styl'
-.blog_info
-  width: 26%
-  margin-left: 20px
-  .module_box
-    background-color: #fff
-    padding: 20px
-    margin-bottom: 20px
-    h4
-      font-size: 18px
-      line-height: 24px
-    .list_box
-      margin-top: 10px
-      .item
-        font-size: 14px
-        color: #333
-        line-height: 2.2
-        display: block
-        ellipsis(1)
-        &:hover
-          text-decoration: underline
-      li
-        font-size: 14px
-        color: #333
-        line-height: 2.2
-        display: block
-</style>
+<style lang="stylus" src="../assets/css/components/blog-info.styl"></style>

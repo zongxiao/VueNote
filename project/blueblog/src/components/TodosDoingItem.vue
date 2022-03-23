@@ -97,46 +97,4 @@ export default {
 };
 </script>
 
-<style lang="stylus">
-.todo_item
-  border-bottom: 1px solid #f4f4f4
-  padding: 8px 20px
-  display: flex
-  justify-content: space-between
-  align-items: center
-  &:first-child
-    border-top: 1px solid #f4f4f4
-  &:hover
-    background-color: #f4f4f4
-    .operation
-      opacity: 1
-  label
-    cursor: pointer
-    .name
-      margin-left: 5px
-      font-size: 14px
-      color: #666
-    .time
-      font-size: 12px
-      color: #aaa
-      margin-left: 4px
-      margin-left: 20px
-    .if_past
-      font-size: 12px
-      font-weight: bold
-      color: rgba(0, 0, 0, 0.2)
-      margin-left: 20px
-    .el-checkbox__inner
-      border: 1px solid #999
-    .is-focus
-      .el-checkbox__inner
-        border: 1px solid #999
-    .is-checked
-      .el-checkbox__inner
-        border: 1px solid #409EFF
-  .edit_box
-    margin-right: 30px
-    min-width: 300px
-  .operation
-    opacity: 0
-</style>
+<style lang="stylus" src="../assets/css/components/todos-doing-item.styl"></style>

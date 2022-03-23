@@ -34,7 +34,6 @@
 </template>
 
 <script>
-import("../assets/css/components/home-piclist.styl");
 export default {
   name: "HomePiclist",
   data() {
@@ -69,3 +68,5 @@ export default {
   },
 };
 </script>
+
+<style lang="stylus" src="../assets/css/components/home-piclist.styl"></style>

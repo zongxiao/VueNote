@@ -1,0 +1,26 @@
+.todo_item
+  border-bottom: 1px solid #eee
+  padding: 6px 20px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  &:first-child
+    border-top: 1px solid #eee
+  label
+    cursor: unset;
+    .name
+      margin-left: 5px
+      font-size: 14px
+      color: #999
+      text-decoration: line-through
+    .time
+      font-size: 12px
+      color: #aaa
+      margin-left: 4px
+    .operation
+      opacity: 0
+  &:hover
+    background-color: #eee
+    label
+      .operation
+        opacity: 1

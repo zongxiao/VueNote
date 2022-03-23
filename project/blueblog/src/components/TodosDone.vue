@@ -62,13 +62,14 @@ export default {
 };
 </script>
 
-<style lang="stylus" socped>
-.todos
-  ul
-    border-top-left-radius: 6px
-    border-top-right-radius: 6px
-    border-left: 1px solid #eee
-    border-right: 1px solid #eee
-  .delete_btn
-    margin: 20px 0 0 21px
+<style>
+.todos ul {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+.todos .delete_btn {
+  margin: 20px 0 0 21px;
+}
 </style>

@@ -71,17 +71,4 @@ export default {
 };
 </script>
 
-<style lang="stylus" socped>
-.input_todo_box
-  font-size: 0
-  display: flex
-  align-items: center
-  .label
-    color: #333
-    font-size: 14px
-    margin-right: 10px
-    margin-left: 20px
-  .input_todo
-    margin-right: 10px
-    flex: 1
-</style>
+<style lang="stylus" src="../assets/css/components/todos-add.styl"></style>

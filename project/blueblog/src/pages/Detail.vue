@@ -1,6 +1,7 @@
 <template>
   <div class="w1200">
     {{ id }}
+    
   </div>
 </template>
 

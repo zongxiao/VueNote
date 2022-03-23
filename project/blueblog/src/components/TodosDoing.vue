@@ -39,11 +39,11 @@ export default {
 };
 </script>
 
-<style lang="stylus" socped>
-.todos
-  ul
-    border-top-left-radius: 6px
-    border-top-right-radius: 6px
-    border-left: 1px solid #eee
-    border-right: 1px solid #eee
+<style lang="css">
+.todos ul {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
 </style>

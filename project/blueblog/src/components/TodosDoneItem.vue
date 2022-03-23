@@ -46,29 +46,4 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
-.todo_item
-  border-bottom: 1px solid #eee
-  padding: 6px 20px
-  display: flex
-  justify-content: space-between
-  align-items: center
-  &:first-child
-    border-top: 1px solid #eee
-  &:hover
-    background-color: #eee
-    .operation
-      opacity: 1
-  label
-  .name
-    margin-left: 5px
-    font-size: 14px
-    color: #999
-    text-decoration: line-through
-  .time
-    font-size: 12px
-    color: #aaa
-    margin-left: 4px
-  .operation
-    opacity: 0
-</style>
+<style lang="stylus" src="../assets/css/components/todos-done-item.styl"></style>

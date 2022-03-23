@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-input placeholder="请输入内容" v-model="input" clearable> </el-input>
+    <el-input placeholder="请输入内容" v-model="input" clearable></el-input>
   </div>
 </template>
 
@@ -14,6 +14,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>

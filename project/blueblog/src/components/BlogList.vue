@@ -1,6 +1,10 @@
 <template>
   <div class="blog_list">
-    <BlogListItem v-for="blog in blogList" :key="blog.id" :blog="blog" />
+    <ul>
+      <li v-for="blog in blogList" :key="blog.id">
+        <BlogListItem :blog="blog" />
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -18,8 +22,11 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
-@import '../assets/css/mixins.styl'
-.blog_list
-  flex: 1
+<style>
+.blog_list {
+  flex: 1;
+}
+.blog_list ul li {
+  margin: 0 0 2% 0;
+}
 </style>
