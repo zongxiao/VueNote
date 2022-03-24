@@ -1,5 +1,5 @@
 <template>
-  <li class="todo_item">
+  <li class="done_item">
     <label>
       <span class="name" :class="{ checked: todo.done }">{{ todo.name }}</span
       ><span class="time">({{ todo.time | timeFormat }})</span></label

@@ -1,25 +1,24 @@
-<!-- <template>
+<template>
   <li class="card_box">
-    <a class="card_cover" :href="item.url" target="_blank">
-      <img :src="item.cover" :alt="item.name" />
-      <i>{{ item.type }}</i>
+    <a class="card_cover" :href="project.url" target="_blank">
+      <img :src="project.cover" :alt="project.name" />
+      <i>{{ project.type }}</i>
     </a>
     <div class="card_info">
       <div class="name">
-        <a :href="item.url">{{ item.name }}</a>
-        <div class="pubtime">{{ item.doneTime }}</div>
+        <a :href="project.url">{{ project.name }}</a>
+        <div class="pubtime">{{ project.doneTime }}</div>
       </div>
-      <div class="subname">{{ item.describe }}</div>
+      <div class="subname">{{ project.describe }}</div>
     </div>
   </li>
 </template>
 
 <script>
 export default {
-  name: 'ProjectItem'
-}
+  name: "ProjectItem",
+  props: ["project"],
+};
 </script>
 
-<style>
-
-</style> -->
+<style lang="stylus" src="../assets/css/components/project-item.styl"></style>

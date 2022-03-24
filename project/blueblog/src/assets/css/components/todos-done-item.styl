@@ -1,11 +1,17 @@
-.todo_item
+.done_item
   border-bottom: 1px solid #eee
   padding: 6px 20px
   display: flex
   justify-content: space-between
   align-items: center
+  .operation
+    opacity: 0
   &:first-child
     border-top: 1px solid #eee
+  &:hover
+    background-color: #eee
+    .operation
+      opacity: 1
   label
     cursor: unset;
     .name
@@ -17,10 +23,3 @@
       font-size: 12px
       color: #aaa
       margin-left: 4px
-    .operation
-      opacity: 0
-  &:hover
-    background-color: #eee
-    label
-      .operation
-        opacity: 1
