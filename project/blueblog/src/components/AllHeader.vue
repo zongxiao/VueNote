@@ -45,9 +45,8 @@ export default {
   box-sizing: border-box
 .logo
   background: #ffffff
-  color: #333333
-  font-size: 30px
-  font-weight: bold
+  color: #333
+  font-size: 26px
   span
     font-size: 14px
     font-weight: normal

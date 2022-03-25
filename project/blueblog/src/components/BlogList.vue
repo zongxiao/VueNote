@@ -27,6 +27,6 @@ export default {
   flex: 1;
 }
 .blog_list ul li {
-  margin: 0 0 2% 0;
+  margin: 0 0 20px 0;
 }
 </style>
