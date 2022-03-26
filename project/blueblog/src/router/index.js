@@ -22,7 +22,7 @@ const routes = [
     meta: {
       isAuth: false,
       title: 'Blogs'
-    }
+    },
   },
   {
     path: '/detail/:id',
@@ -46,7 +46,10 @@ const routes = [
 ]
 const router = new VueRouter({
   mode: 'history', // history or hash
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    return savedPosition || { x: 0, y: 0 }
+  }
 })
 router.beforeEach((to, from, next) => {
   console.log('router.beforeEach')
