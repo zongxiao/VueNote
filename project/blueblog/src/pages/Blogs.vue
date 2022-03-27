@@ -2,23 +2,31 @@
   <div>
     <Banner :BannerInfo="bannerInfo" />
     <div class="blogs_box w1200">
-      <BlogList />
-      <BlogInfo :goodBlogs="goodBlogs" />
+      <div class="blog_list">
+        <ul>
+          <li v-for="blog in blogList" :key="blog.id">
+            <BlogListItem :blog="blog" />
+          </li>
+        </ul>
+      </div>
+      <div class="blog_side">
+        <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-import Banner from "../components/Banner.vue";
-import BlogList from "../components/BlogList.vue";
-import BlogInfo from "../components/BlogInfo.vue";
+import { mapState, mapGetters } from "vuex";
+import Banner from "../components/Banner";
+import BlogListItem from "../components/BlogListItem";
+import BlogSideModule from '../components/BlogSideModule'
 export default {
   name: "Blogs",
   components: {
     Banner,
-    BlogList,
-    BlogInfo,
+    BlogListItem,
+    BlogSideModule,
   },
   data() {
     return {
@@ -32,6 +40,7 @@ export default {
     };
   },
   computed: {
+    ...mapState({ blogList: "blogs" }),
     ...mapGetters(["goodBlogs"]),
   },
 };
@@ -41,5 +50,15 @@ export default {
 .blogs_box {
   margin-top: 40px;
   display: flex;
+}
+.blog_list {
+  flex: 1;
+}
+.blog_list ul li {
+  margin: 0 0 20px 0;
+}
+.blog_side {
+  width: 300px;
+  margin-left: 20px;
 }
 </style>
