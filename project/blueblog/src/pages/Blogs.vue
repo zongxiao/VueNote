@@ -10,7 +10,10 @@
         </ul>
       </div>
       <div class="blog_side">
-        <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
+        <div :class="{ iffixed: ifFixed }">
+          <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
+          <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
+        </div>
       </div>
     </div>
   </div>
@@ -20,7 +23,7 @@
 import { mapState, mapGetters } from "vuex";
 import Banner from "../components/Banner";
 import BlogListItem from "../components/BlogListItem";
-import BlogSideModule from '../components/BlogSideModule'
+import BlogSideModule from "../components/BlogSideModule";
 export default {
   name: "Blogs",
   components: {
@@ -37,28 +40,30 @@ export default {
           imgurl: "/img/banner/todos_banner2.jpg",
         },
       ],
+      ifFixed: false,
     };
   },
   computed: {
     ...mapState({ blogList: "blogs" }),
-    ...mapGetters(["goodBlogs"]),
+    ...mapGetters(["goodBlogs"])
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      let scrollTop =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+      const offsetTop = document.querySelector(".blogs_box").offsetTop;
+      this.ifFixed = scrollTop > offsetTop ? true : false;
+    },
   },
 };
 </script>
 
-<style>
-.blogs_box {
-  margin-top: 40px;
-  display: flex;
-}
-.blog_list {
-  flex: 1;
-}
-.blog_list ul li {
-  margin: 0 0 20px 0;
-}
-.blog_side {
-  width: 300px;
-  margin-left: 20px;
-}
-</style>
+<style lang="stylus" src="../assets/css/blogs.styl"></style>

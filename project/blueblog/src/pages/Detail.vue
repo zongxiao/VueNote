@@ -1,22 +1,24 @@
 <template>
   <div class="w1200 detail_box">
-    <div class="left_box" >
+    <div class="left_box">
       <div class="article_top">
         <h4 class="tit">{{ detail.title }}</h4>
         <div class="others">
-          <span>时间：{{ detail.time }}</span>
-          <span>分类：{{ detail.type }}</span>
+          <span>文章所属：{{ detail.type }}</span>
+          <span>最后修改：{{ detail.time }}</span>
         </div>
       </div>
       <div class="article_content" v-html="detail.content"></div>
     </div>
     <div class="right_box">
-      <BlogSideModule
-        v-show="relatedBlogs.length"
-        moduleTitle="相关文章"
-        :data="relatedBlogs"
-      />
-      <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
+      <div :class="{ iffixed }">
+        <BlogSideModule
+          v-show="relatedBlogs.length"
+          moduleTitle="相关文章"
+          :data="relatedBlogs"
+        />
+        <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
+      </div>
     </div>
   </div>
 </template>
@@ -27,10 +29,10 @@ import BlogSideModule from "../components/BlogSideModule";
 export default {
   name: "Detail",
   props: ["id"],
-  date() {
+  data() {
     return {
-      relatedModuleFixed: false
-    }
+      iffixed: false,
+    };
   },
   components: {
     BlogSideModule,
@@ -42,18 +44,17 @@ export default {
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
   },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
   methods: {
     handleScroll() {
-      var scrollTop =
+      let scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      var offsetTop = document.querySelector('.left_box').offsetTop
-      if (scrollTop > offsetTop) {
-        this.relatedModuleFixed = true;
-      } else {
-        this.relatedModuleFixed = false;
-      }
+      const offsetTop = document.querySelector(".detail_box").offsetTop;
+      this.iffixed = scrollTop > offsetTop ? true : false;
     },
   },
   watch: {

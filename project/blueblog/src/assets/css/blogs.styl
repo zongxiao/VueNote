@@ -1,0 +1,31 @@
+.blogs_box
+  margin-top: 40px
+  position: relative
+  .blog_list
+    width: 906px
+    ul
+      li
+        margin: 0 0 20px 0
+  .blog_side
+    width: 300px
+    margin-left: 20px
+    position: absolute
+    right: 0
+    top: 0
+    height: auto
+    .iffixed
+      width: inherit
+      position: fixed
+      top: 20px
+      overflow-y: scroll
+      &::-webkit-scrollbar
+        width: 2px
+        height: 2px
+      &::-webkit-scrollbar-thumb
+        border-radius: 5px
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2)
+        background: rgba(0,0,0,0.05)
+      &::-webkit-scrollbar-track
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2)
+        border-radius: 0;
+        background: rgba(0,0,0,0.01);
