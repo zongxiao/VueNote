@@ -1,5 +1,5 @@
 <template>
-  <div class="w1200 detail_box">
+  <div class="w1200 detail_box" ref="detailBox">
     <div class="left_box">
       <div class="article_top">
         <h4 class="tit">{{ detail.title }}</h4>
@@ -10,8 +10,9 @@
       </div>
       <div class="article_content" v-html="detail.content"></div>
     </div>
-    <div class="right_box">
-      <div :class="{ iffixed }">
+    <div class="right_box" >
+      <div :class="{ iffixed: ifFixed, scroll_style: ifOverMaxHeight }" :style="{ 'max-height': fixedBoxMaxHeight + 'px' }"
+          ref="fixedBox">
         <BlogSideModule
           v-show="relatedBlogs.length"
           moduleTitle="相关文章"
@@ -31,7 +32,9 @@ export default {
   props: ["id"],
   data() {
     return {
-      iffixed: false,
+      ifFixed: false,
+      fixedBoxMaxHeight: 600,
+      ifOverMaxHeight: false,
     };
   },
   components: {
@@ -42,6 +45,8 @@ export default {
     ...mapGetters(["goodBlogs"]),
   },
   mounted() {
+    this.ifOverMaxHeight =
+      this.$refs.fixedBox.clientHeight >= this.fixedBoxMaxHeight ? true : false;
     window.addEventListener("scroll", this.handleScroll);
   },
   destroyed() {
@@ -49,12 +54,12 @@ export default {
   },
   methods: {
     handleScroll() {
+      const offsetTop = this.$refs.detailBox.offsetTop;
       let scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      const offsetTop = document.querySelector(".detail_box").offsetTop;
-      this.iffixed = scrollTop > offsetTop ? true : false;
+      this.ifFixed = scrollTop > offsetTop ? true : false;
     },
   },
   watch: {

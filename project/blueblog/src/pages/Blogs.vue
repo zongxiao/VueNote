@@ -1,7 +1,7 @@
 <template>
   <div>
     <Banner :BannerInfo="bannerInfo" />
-    <div class="blogs_box w1200">
+    <div class="blogs_box w1200" ref="blogListBox">
       <div class="blog_list">
         <ul>
           <li v-for="blog in blogList" :key="blog.id">
@@ -10,7 +10,13 @@
         </ul>
       </div>
       <div class="blog_side">
-        <div :class="{ iffixed: ifFixed }">
+        <div
+          :class="{ iffixed: ifFixed, scroll_style: ifOverMaxHeight }"
+          :style="{ 'max-height': fixedBoxMaxHeight + 'px' }"
+          ref="fixedBox"
+        >
+          <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
+          <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
           <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
           <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
         </div>
@@ -41,13 +47,17 @@ export default {
         },
       ],
       ifFixed: false,
+      fixedBoxMaxHeight: 600,
+      ifOverMaxHeight: false,
     };
   },
   computed: {
     ...mapState({ blogList: "blogs" }),
-    ...mapGetters(["goodBlogs"])
+    ...mapGetters(["goodBlogs"]),
   },
   mounted() {
+    this.ifOverMaxHeight =
+      this.$refs.fixedBox.clientHeight >= this.fixedBoxMaxHeight ? true : false;
     window.addEventListener("scroll", this.handleScroll);
   },
   destroyed() {
@@ -55,11 +65,11 @@ export default {
   },
   methods: {
     handleScroll() {
+      const offsetTop = this.$refs.blogListBox.offsetTop;
       let scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
         document.body.scrollTop;
-      const offsetTop = document.querySelector(".blogs_box").offsetTop;
       this.ifFixed = scrollTop > offsetTop ? true : false;
     },
   },

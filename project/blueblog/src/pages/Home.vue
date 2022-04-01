@@ -4,7 +4,7 @@
 
     <div class="home_project">
       <h4 class="title">PROJECT</h4>
-      <el-tabs v-model="activeName" >
+      <el-tabs v-model="activeName" type="border-card">
         <el-tab-pane
           v-for="item in projectType"
           :key="item"
