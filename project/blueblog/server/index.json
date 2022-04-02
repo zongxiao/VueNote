@@ -1,78 +1,10 @@
-{
-  "_id": "test.sys",
-  "userId": UUID("b2472ae2-5a47-4126-ac73-2a9236d3a90d"),
-  "user": "sys",
-  "db": "test",
-  "credentials": {
-    "SCRAM-SHA-1": {
-      "iterationCount": 10000,
-      "salt": "knfFasJ6s6tRFUPMQHybQA==",
-      "storedKey": "zsEKOLfkCdqNYRc/g7lu5rvc7Lc=",
-      "serverKey": "A5iOp+960RPPoedKNgN41QvEhGM="
-    },
-    "SCRAM-SHA-256": {
-      "iterationCount": 15000,
-      "salt": "MRHJ+ECDc+qFG2nBz7iFiXJBZszA3Z8Eo9LjmA==",
-      "storedKey": "aMliQpswacS2sIEfCun0KA69oCAxgqujXrnBACHGJgg=",
-      "serverKey": "+sC61Gb9MAkoPEX6yV+XVrcHVamYJW5gwt2RHWTXbys="
-    }
-  },
-  "roles": [
+db.createUser({
+  user: 'admin',
+  pwd: '123456',
+  roles: [
     {
-      "role": "root",
-      "db": "admin"
+      role: 'root',
+      db: 'admin'
     }
   ]
-}
-{
-  "_id": "admin.BLOG",
-  "userId": UUID("c28932be-961c-42ea-bd7b-38b9037531d1"),
-  "user": "BLOG",
-  "db": "admin",
-  "credentials": {
-    "SCRAM-SHA-1": {
-      "iterationCount": 10000,
-      "salt": "IG8NnnCWc9U74p5s8eGO1w==",
-      "storedKey": "WayPAm4KaHmKWiXfdgUtglnsQns=",
-      "serverKey": "vPl2rtG4zVI5XCmIPKDbfHuadGs="
-    },
-    "SCRAM-SHA-256": {
-      "iterationCount": 15000,
-      "salt": "ICosMP+2YgJ2fMVEvpAsEj41kPqhvKuD0mtTBQ==",
-      "storedKey": "7/1lgIUdbyzjkLZT+bDs9kzCA0jwgndj+3/cajRtL7Y=",
-      "serverKey": "ckMguJgaUY/5jdWDUGtgd2u8+JrU2L8LQ5D5kUDy0gk="
-    }
-  },
-  "roles": [
-    {
-      "role": "readWrite",
-      "db": "BLOG"
-    }
-  ]
-}
-{
-  "_id": "admin.zongxiaosblog",
-  "userId": UUID("204bac60-27ea-49b8-8be4-e0fc4abd0423"),
-  "user": "zongxiaosblog",
-  "db": "admin",
-  "credentials": {
-    "SCRAM-SHA-1": {
-      "iterationCount": 10000,
-      "salt": "Pemg0kgsdKcaPytdZPwaDg==",
-      "storedKey": "HxOV8VNQIQc16axah9lC4Qn9xR8=",
-      "serverKey": "O9ZNLCYdEZBytFWrt3le0r9roww="
-    },
-    "SCRAM-SHA-256": {
-      "iterationCount": 15000,
-      "salt": "uD89dKBKxN32aPubXxVzyIk0tucfyTdtf+5YwQ==",
-      "storedKey": "HBRp4Xiplytqp471Hpp1PH0f5qLI4LrMpHeYrsj92Ns=",
-      "serverKey": "kKUAumGQi1kwbSuVAw6HSsrYAUe2R0bdx0dWSOoG/Mc="
-    }
-  },
-  "roles": [
-    {
-      "role": "readWrite",
-      "db": "zongxiaosblog"
-    }
-  ]
-}
+})
