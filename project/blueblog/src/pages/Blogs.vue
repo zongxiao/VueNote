@@ -16,9 +16,6 @@
           ref="fixedBox"
         >
           <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
-          <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
-          <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
-          <BlogSideModule :data="goodBlogs" moduleTitle="精选文章" />
         </div>
       </div>
     </div>

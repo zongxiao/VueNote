@@ -2,7 +2,7 @@
   <div class="all_state_box" v-show="todosCheckedLength">
     <label class="label">
       <el-checkbox class="check_box" v-model="allTotoState"></el-checkbox>
-      <span class="checkd_num">checked：</span>
+      <span class="checkd_num"></span>
       <span class="total_num">{{ todosCheckedLength }}/{{ todosLength }}</span>
     </label>
     <el-button
@@ -10,9 +10,8 @@
       icon="el-icon-check"
       size="small"
       class="finished_btn"
-      v-show="todosCheckedLength"
       @click="sortByTodosState"
-      >finished</el-button
+      >Finished</el-button
     >
   </div>
 </template>

@@ -4,8 +4,8 @@
     <div class="todos_box w1200">
       <div class="left_box">
         <ul>
-          <li :class="{ active: ifTodosDoing }" @click="showDoing">doing</li>
-          <li :class="{ active: !ifTodosDoing }" @click="showDone">finished</li>
+          <li :class="{ active: ifTodosDoing }" @click="showDoing">Doing</li>
+          <li :class="{ active: !ifTodosDoing }" @click="showDone">Finished</li>
         </ul>
       </div>
       <div class="right_box">

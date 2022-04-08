@@ -9,7 +9,7 @@
       <i slot="prefix" class="el-input__icon el-icon-edit"></i>
     </el-input>
 
-    <div class="label">deadline</div>
+    <div class="label">Deadline</div>
     <el-date-picker
       class="input_todo"
       v-model="inputTodoTime"
@@ -18,7 +18,7 @@
       @change="checkDateIfAfterToday"
     >
     </el-date-picker>
-    <el-button plain @click="HandleAddTodo">add</el-button>
+    <el-button plain @click="HandleAddTodo">Add</el-button>
   </div>
 </template>
 

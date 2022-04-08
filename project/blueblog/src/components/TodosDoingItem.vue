@@ -32,7 +32,7 @@
         size="mini"
         icon="el-icon-edit"
         @click="handleEditState(todo)"
-        >edit</el-button
+        >Edit</el-button
       >
       <el-button
         type="danger"
@@ -40,7 +40,7 @@
         size="mini"
         icon="el-icon-delete"
         @click="handleDeleteTodo(todo.id)"
-        >delete</el-button
+        >Delete</el-button
       >
     </div>
   </li>
@@ -91,7 +91,7 @@ export default {
   },
   computed: {
     ifPast() {
-      return new Date().getDate() - new Date(this.todo.time).getDate() > 0;
+      return (new Date().getTime() - new Date(this.todo.time).getTime()) / (1000 * 60 * 60 * 24) > 1
     },
   },
 };
