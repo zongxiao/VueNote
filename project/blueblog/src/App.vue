@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import("./assets/css/common.styl");
 import AllHeader from "./components/AllHeader.vue";
 import AllFooter from "./components/AllFooter.vue";
@@ -21,8 +20,7 @@ export default {
     AllFooter,
   },
   mounted() {
-    axios.get('/7000/blogs').then(res => {
-      alert('app组件请求blogs接口' + res)
+    this.$axios.get('/7000/blogs').then(res => {
       console.log(res)
     })
   }

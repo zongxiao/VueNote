@@ -5,6 +5,7 @@ import Home from '../pages/Home.vue'
 import Blogs from '../pages/Blogs.vue'
 import Detail from '../pages/Detail.vue'
 import Todos from '../pages/Todos.vue'
+import Admin from '../pages/Admin.vue'
 const routes = [
   {
     path: '/',
@@ -13,6 +14,15 @@ const routes = [
     meta: {
       isAuth: false,
       title: 'Home'
+    }
+  },
+  {
+    path: '/admin',
+    component: Admin,
+    name: 'Admin',
+    meta: {
+      isAuth: false,
+      title: 'Admin'
     }
   },
   {
